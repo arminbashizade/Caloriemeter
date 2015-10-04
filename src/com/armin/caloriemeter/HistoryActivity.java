@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -15,17 +16,21 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class HistoryActivity extends FragmentActivity implements ActionBar.TabListener {
 
-    /**
+    private static final int PROFILE = 0;
+
+	private static final int LOG_OFF = 1;
+
+	/**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link android.support.v4.app.FragmentPagerAdapter} derivative, which
@@ -42,8 +47,6 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
-    private CharSequence mDrawerTitle;
-    private CharSequence mTitle;
     
     private String[] navigationMenuItems;
     
@@ -65,19 +68,46 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         navigationMenuItems = getResources().getStringArray(R.array.navigation_menu_items);
         
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
-                R.layout.drawer_list_item, navigationMenuItems));
+        mDrawerList.setAdapter(new NavigationAdapter(this, navigationMenuItems));
         // Set the list's click listener
         mDrawerList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
-					// TODO Auto-generated method stub
-				    mDrawerLayout.closeDrawer(mDrawerList);
+				// TODO Auto-generated method stub
+				switch(position)
+				{
+				case PROFILE:
+					break;
+				case LOG_OFF:
+					break;
 				}
+				setTitle(navigationMenuItems[position]);
+				mDrawerLayout.closeDrawer(mDrawerList);
+			}
 		});
 
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.drawable.ic_drawer, 0, 0) {
+
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                super.onDrawerClosed(view);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+        };
+        
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+        
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -108,7 +138,33 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
                             .setTabListener(this));
         }
     }
+    
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        mDrawerToggle.syncState();
+    }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+          return true;
+        }
+        // Handle your other action bar items...
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -123,12 +179,6 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         mViewPager.setCurrentItem(tab.getPosition());
     }
 
-    @Override
-	public void setTitle(CharSequence title) {
-    	mTitle = title;
-    	getActionBar().setTitle(mTitle);
-	}
-    
     @Override
     public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }

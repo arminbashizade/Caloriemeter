@@ -70,9 +70,8 @@ int drawable ic_action_edit 0x7f020001
 int drawable ic_drawer 0x7f020002
 int drawable ic_launcher 0x7f020003
 int drawable none 0x7f020004
-int id action_done 0x7f080042
-int id action_save 0x7f080043
-int id action_settings 0x7f080041
+int id action_done 0x7f080041
+int id action_save 0x7f080042
 int id ampm_hitspace 0x7f08003c
 int id ampm_label 0x7f08003d
 int id animator 0x7f080007

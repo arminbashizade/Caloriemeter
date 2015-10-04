@@ -99,9 +99,8 @@ public final class R {
         public static final int none=0x7f020004;
     }
     public static final class id {
-        public static final int action_done=0x7f080042;
-        public static final int action_save=0x7f080043;
-        public static final int action_settings=0x7f080041;
+        public static final int action_done=0x7f080041;
+        public static final int action_save=0x7f080042;
         public static final int ampm_hitspace=0x7f08003c;
         public static final int ampm_label=0x7f08003d;
         public static final int animator=0x7f080007;
