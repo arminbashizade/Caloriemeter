@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="action_bar_color">#4CB050</color>
+    <color name="action_bar_darker_color">#3F9142</color>
+    <color name="action_bar_title_color">#FFFFFF</color>
+    <color name="tab_bar_color">#000000</color>
+    <color name="link">#0000FF</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+</resources>

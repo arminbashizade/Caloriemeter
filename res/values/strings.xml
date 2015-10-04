@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Caloriemeter</string>
+    <string name="settings">Settings</string>
+    <string name="history_tab_title">History</string>
+    <string name="analysis_tab_title">Analysis</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="gender">Gender:</string>
+    <string name="date_of_birth">Date of birth:</string>
+    <string name="height">Height:</string>
+    <string name="weight">Weight:</string>
+    <string name="kg">Kg</string>
+    <string name="cm">cm</string>
+    <string name="cal">Cal</string>
+    <string name="bmi">BMI:</string>
+
+    <!-- https://en.wikipedia.org/wiki/Body_mass_index#Categories -->
+    <string name="bmi_1">You\'re not OK1.</string>
+    <string name="bmi_2">You\'re not OK2.</string>
+    <string name="bmi_3">You\'re not OK3.</string>
+    <string name="bmi_4">You\'re OK.</string>
+    <string name="bmi_5">You\'re not OK5.</string>
+    <string name="bmi_6">You\'re not OK6.</string>
+    <string name="bmi_7">You\'re not OK7.</string>
+    <string name="bmi_8">You\'re not OK8.</string>
+    <string name="bmi_test_number">19.2</string>
+    <string name="manual">manual</string>
+    <string name="recommended">recommended</string>
+    <string name="daily_target">Daily target:</string>
+    <string name="diet_goal">Diet goal:</string>
+    <string name="lifestyle">Lifestyle:</string>
+    <string name="action_set_calorie_goal">Set Calorie Goal</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="edit">edit</string>
+    <string name="sedantry">Sedantry</string>
+    <string name="lightly_active">Lightly active</string>
+    <string name="moderately_active">Moderately active</string>
+    <string name="very_active">Very active</string>
+    <string name="extra_active">Extra active</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="lose_weight">Lose weight</string>
+    <string name="maintain_weight">Maintain weight</string>
+    <string name="gain_weight">Gain weight</string>
+    <string name="log_off">Log off</string>
+    <string name="profile">Profile</string>
+    <string name="error_enter_daily_target">Enter daily target, or use recommended amount.</string>
+    <string name="error_enter_date_of_birth">Enter date of birth.</string>
+    <string name="error_enter_height">Enter height.</string>
+    <string name="error_enter_weight">Enter weight.</string>
+
+    <string-array name="lifestyle_list">
+        <item>@string/sedantry</item>
+        <item>@string/lightly_active</item>
+        <item>@string/moderately_active</item>
+        <item>@string/very_active</item>
+        <item>@string/extra_active</item>
+    </string-array>
+    <string-array name="gender_list">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+    
+    <string-array name="diet_goal_list">
+        <item>@string/lose_weight</item>
+        <item>@string/maintain_weight</item>
+        <item>@string/gain_weight</item>
+    </string-array>
+
+    <string-array name="bmi_explanations">
+        <item>@string/bmi_1</item>
+        <item>@string/bmi_2</item>
+        <item>@string/bmi_3</item>
+        <item>@string/bmi_4</item>
+        <item>@string/bmi_5</item>
+        <item>@string/bmi_6</item>
+        <item>@string/bmi_7</item>
+        <item>@string/bmi_8</item>
+    </string-array>
+
+    <string-array name="navigation_menu_items">
+        <item>@string/profile</item>
+        <item>@string/log_off</item>
+    </string-array>
+    
+    
+    <string name="title_activity_target_calculator">Set Calorie Target</string>
+    <string name="title_activity_main">Caloriemeter</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_activity1">MainActivity1</string>
+    <string name="title_activity_main_activity2">MainActivity2</string>
+
+</resources>

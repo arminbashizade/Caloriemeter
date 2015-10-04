@@ -1,0 +1,192 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ProfileActivity" >
+
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <TextView
+	        android:id="@+id/gender_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/gender" />
+    
+        <Spinner
+	        android:id="@+id/gender_spinner"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dp"
+	        android:entries="@array/gender_list" />    
+	</LinearLayout>
+    
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+    
+	    <TextView
+	        android:id="@+id/date_of_birth_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/date_of_birth" />
+	
+	    <EditText
+	        android:id="@+id/date_of_birth_edit_text"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:ems="10"
+	        android:inputType="date" >
+	    </EditText>
+	</LinearLayout>
+	
+    <LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+	    <TextView
+	        android:id="@+id/height_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/height" />
+	
+	    <EditText
+	        android:id="@+id/height_edit_text"
+	        android:layout_width="0dp"
+	        android:layout_weight="1"
+	        android:layout_height="wrap_content"
+	        android:gravity="center"
+	        android:ems="10"
+	        android:inputType="number" />
+	    
+	    <TextView
+	        android:id="@+id/cm_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/cm" />
+	</LinearLayout>
+	<LinearLayout 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+	
+	    <TextView
+	        android:id="@+id/weight_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/weight" />
+	
+	    <EditText
+	        android:id="@+id/weight_edit_text"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:gravity="center"
+	        android:ems="10"
+	        android:inputType="number" />
+	    
+	    <TextView
+	        android:id="@+id/kg_label"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:text="@string/kg" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="5dp" >
+
+		<TextView
+		    android:id="@+id/calorie_target_label"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:gravity="center_vertical"
+		    android:text="@string/daily_target" />
+
+		<TextView
+		    android:id="@+id/calorie_goal_text_view_profile"
+		    android:layout_width="0dp"
+		    android:layout_height="match_parent"
+		    android:layout_weight="1"
+		    android:gravity="center"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<ImageButton
+		    android:id="@+id/calorie_target_edit_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:gravity="center_vertical"
+		    android:contentDescription="@string/edit"
+		    android:background="@drawable/none"
+		    android:layout_marginLeft="5dp"
+		    android:layout_marginRight="5dp"
+		    android:src="@drawable/ic_action_edit" />
+
+		<TextView
+		    android:id="@+id/calorie_label_profile"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:gravity="center_vertical"
+		    android:text="@string/cal" />
+	    
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:gravity="center_vertical"
+	    android:orientation="vertical" >
+
+		<LinearLayout
+	        android:orientation="horizontal"
+	        android:gravity="center_horizontal"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content">
+	
+			<TextView
+		        android:id="@+id/bmi_label"
+		        android:textSize="30sp"
+		        android:textStyle="bold"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginRight="1dp"
+		        android:gravity="center_vertical"
+		        android:text="@string/bmi" />
+		    
+			<TextView
+		        android:id="@+id/bmi_number"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="1dp"
+		        android:textSize="30sp"
+		        android:textStyle="bold"
+		        android:gravity="center_vertical|right"
+		        android:text="@string/bmi_test_number" />
+		</LinearLayout>
+
+		<TextView
+	        android:id="@+id/bmi_explanation"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:text="@string/bmi_4" />
+
+	</LinearLayout>
+	
+</LinearLayout>

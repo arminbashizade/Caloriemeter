@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.armin.caloriemeter"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.armin.caloriemeter.HistoryActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.LoginActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.TargetCalculatorActivity"
+            android:label="@string/title_activity_target_calculator"
+            android:parentActivityName="com.armin.caloriemeter.ProfileActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.armin.caloriemeter.ProfileActivity" />
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+    </application>
+
+</manifest>
