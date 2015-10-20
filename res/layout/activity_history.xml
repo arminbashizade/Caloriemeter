@@ -4,11 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-   	<android.support.v4.view.ViewPager 
-	    android:id="@+id/pager"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent" />
-	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+        <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/action_bar_color">
+        	<TextView 
+        		android:id="@+id/history_tab_label"
+        		android:layout_width="wrap_content"
+        		android:textAppearance="?android:attr/textAppearanceMedium"
+        		android:layout_marginTop="5dp"
+        		android:layout_marginBottom="5dp"
+        		android:layout_marginLeft="10dp"
+        		android:layout_marginRight="10dp"
+        		android:textColor="@color/selected_tab"
+        		android:layout_height="wrap_content"
+        		android:text="@string/history_tab_title" />
+        	<TextView 
+        		android:id="@+id/analysis_tab_label"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_marginTop="5dp"
+        		android:layout_marginBottom="5dp"
+        		android:layout_marginLeft="10dp"
+        		android:layout_marginRight="10dp"
+        		android:textColor="@color/unselected_tab"
+        		android:textAppearance="?android:attr/textAppearanceMedium"
+        		android:text="@string/analysis_tab_title" />
+        </LinearLayout>
+        
+        <android.support.v4.view.ViewPager 
+		    android:id="@+id/pager"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent" />
+        
+    </LinearLayout>
+   	
 	<ListView android:id="@+id/left_drawer"
         android:layout_width="240dp"
         android:layout_height="match_parent"

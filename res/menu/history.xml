@@ -1,3 +1,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+	
+	<item
+        android:id="@+id/action_new_food"
+        android:showAsAction="always"
+        android:title="@string/new_food"
+        android:icon="@drawable/add_new_food" />
+	
+	<item
+        android:id="@+id/action_pick_date"
+        android:showAsAction="always"
+        android:title="@string/pick_date"
+        android:icon="@drawable/ic_action_go_to_today" />
+	
+	<item
+        android:id="@+id/action_previous_day"
+        android:showAsAction="always"
+        android:title="@string/previous_day"
+        android:icon="@drawable/ic_action_previous_item" />
+	
+	<item
+        android:id="@+id/action_next_day"
+        android:showAsAction="always"
+        android:title="@string/next_day"
+        android:icon="@drawable/ic_action_next_item" />
+    
 </menu>

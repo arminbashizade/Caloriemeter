@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item
+	        android:id="@+id/action_add_new_food"
+	        android:showAsAction="always"
+	        android:title="@string/add_new_food"/>
+</menu>

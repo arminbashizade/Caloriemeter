@@ -3,6 +3,7 @@
 	<name>Caloriemeter</name>
 	<comment></comment>
 	<projects>
+		<project>orchestrate-java-client</project>
 		<project>persiandatetimepicker-library</project>
 	</projects>
 	<buildSpec>

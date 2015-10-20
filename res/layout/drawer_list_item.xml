@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-    <TextView 
-        android:id="@+id/navigarion_drawer_item_text_view"
+    <ImageView 
+        android:id="@+id/navigarion_drawer_item_button_image"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_action_person"
+        android:contentDescription="@null" />
+    
+    <Button
+        android:id="@+id/navigarion_drawer_item_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:textColor="@color/navigation_drawer_item_color"
+        android:paddingLeft="5dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:gravity="left|center_vertical" />
 
 </LinearLayout>

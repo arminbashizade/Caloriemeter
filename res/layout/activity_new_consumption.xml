@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NewConsumptionActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:background="@color/action_bar_color" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_search"
+            android:contentDescription="@null" />
+        <EditText 
+            android:id="@+id/search_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/action_bar_title_color"
+            android:maxLines="1"
+            android:imeActionId="@+id/login"
+            android:imeActionLabel="@string/action_search"
+            android:imeOptions="actionUnspecified"
+            android:singleLine="true"
+            android:hint="@string/search_title" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/new_food_search_results_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="0dp" >
+    </ListView>
+
+</LinearLayout>

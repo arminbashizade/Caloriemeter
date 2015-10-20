@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/Armin/Documents/AUT/Internship/android-support-v7-appcompat.jar"/>
 	<classpathentry exported="true" kind="lib" path="D:/Setup/Android SDK/adt-bundle-windows-x86_64-20130514/sdk/extras/android/support/v13/android-support-v13.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Armin/Documents/AUT/Internship/orchestrate-client-0.11.1.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

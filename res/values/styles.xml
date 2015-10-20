@@ -16,6 +16,7 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="android:actionBarStyle">@style/MyTheme.ActionBarStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
@@ -27,6 +28,7 @@
 
     <style name="MyTheme.ActionBar.TitleStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
     	<item name="android:textColor">@color/action_bar_title_color</item>
+    	<item name="android:textSize">20sp</item>
   	</style>
     
     <style name="LoginFormContainer">

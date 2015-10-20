@@ -7,9 +7,9 @@
     <string name="prompt_password">Password</string>
     <string name="repeat_password">Reapeat Password</string>
     <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_link"><u>Sign in</u></string>
-    <string name="action_sign_up_link"><u>Sign up</u></string>
-    <string name="action_forgot_password"><u>forgot password?</u></string>
+    <string name="action_sign_in_link_underlined"><u>Sign in</u></string>
+    <string name="action_sign_up_link_underlined"><u>Sign up</u></string>
+    <string name="action_forgot_password_underlined"><u>forgot password?</u></string>
     <string name="action_register">Register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="login_progress_signing_in">Signing in&#8230;</string>

@@ -14,23 +14,27 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.armin.caloriemeter.HistoryActivity"
-            android:label="@string/app_name" >
+            android:name="com.armin.caloriemeter.activities.HistoryActivity"
+            android:label="@string/app_name"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.LoginActivity"
+            android:name="com.armin.caloriemeter.activities.LoginActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.ProfileActivity"
+            android:name="com.armin.caloriemeter.activities.ProfileActivity"
             android:label="@string/title_activity_profile"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
@@ -38,20 +42,53 @@
                 android:value="splitActionBarWhenNarrow" />
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.TargetCalculatorActivity"
+            android:name="com.armin.caloriemeter.activities.TargetCalculatorActivity"
             android:label="@string/title_activity_target_calculator"
-            android:parentActivityName="com.armin.caloriemeter.ProfileActivity"
+            android:parentActivityName="com.armin.caloriemeter.activities.ProfileActivity"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
                 android:value="splitActionBarWhenNarrow" />
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.armin.caloriemeter.ProfileActivity" />
+                android:value="com.armin.caloriemeter.activities.ProfileActivity" />
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.MainActivity"
+            android:name="com.armin.caloriemeter.activities.MainActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:label="@string/title_activity_new_consumption"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.activities.FoodDetailActivity"
+            android:label="@string/title_activity_food_detail"
+            android:parentActivityName="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.armin.caloriemeter.activities.NewConsumptionActivity" />
+        </activity>
+        <activity
+            android:name="com.armin.caloriemeter.NewFoodActivity"
+            android:label="@string/title_activity_new_food"
+            android:parentActivityName="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
+            <meta-data
+                android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow" />
+            
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.armin.caloriemeter.activities.NewConsumptionActivity" />
         </activity>
     </application>
 
