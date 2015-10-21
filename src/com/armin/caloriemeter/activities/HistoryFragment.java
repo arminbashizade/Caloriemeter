@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +45,13 @@ public class HistoryFragment extends Fragment
 	{
 	}
 
+	public void setDate(int year, int month, int day)
+	{
+		cal.set(Calendar.YEAR, year);
+		cal.set(Calendar.MONTH, month);
+		cal.set(Calendar.DAY_OF_MONTH, day);
+	}
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -122,7 +128,6 @@ public class HistoryFragment extends Fragment
 			};
 
 			Date date = params[0];
-			
 			String today = date.getSTDString();
 			String selection = DailyConsumptionEntry.COLUMN_NAME_DATE+" like '"+today+"'";
 

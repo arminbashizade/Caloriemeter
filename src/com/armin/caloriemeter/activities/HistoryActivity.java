@@ -20,7 +20,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.armin.caloriemeter.Constants;
 import com.armin.caloriemeter.Date;
@@ -50,18 +49,17 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
-    private TextView[] tabs = new TextView[2];
-
+//    private TextView[] tabs = new TextView[2];
+    
     private String[] navigationMenuItems;
     
     private PersianCalendar calendar = new PersianCalendar();
-    private Calendar cal = Calendar.getInstance();
+    private Calendar cal= Calendar.getInstance();
     
     PersianDatePickerDialog persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
 	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
 
     private HistoryFragment historyFragment = null;
-    private AnalysisFragment analysisFragment = null;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,25 +73,25 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
-        tabs[0] = (TextView) findViewById(R.id.history_tab_label);
-        tabs[1] = (TextView) findViewById(R.id.analysis_tab_label);
+//        tabs[0] = (TextView) findViewById(R.id.history_tab_label);
+//        tabs[1] = (TextView) findViewById(R.id.analysis_tab_label);
 
-        tabs[0].setOnClickListener(
-        		new View.OnClickListener() {
-
-        			@Override
-        			public void onClick(View v) {
-        				mViewPager.setCurrentItem(0, true);
-        			}
-        		});
-        tabs[1].setOnClickListener(
-        		new View.OnClickListener() {
-
-        			@Override
-        			public void onClick(View v) {
-        				mViewPager.setCurrentItem(1, true);
-        			}
-        		});
+//        tabs[0].setOnClickListener(
+//        		new View.OnClickListener() {
+//
+//        			@Override
+//        			public void onClick(View v) {
+//        				mViewPager.setCurrentItem(0, true);
+//        			}
+//        		});
+//        tabs[1].setOnClickListener(
+//        		new View.OnClickListener() {
+//
+//        			@Override
+//        			public void onClick(View v) {
+//        				mViewPager.setCurrentItem(1, true);
+//        			}
+//        		});
         
         navigationMenuItems = getResources().getStringArray(R.array.navigation_menu_items);
         
@@ -127,17 +125,17 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        
         // When swiping between different sections, select the corresponding
         // tab. We can also use ActionBar.Tab#select() to do this if we have
         // a reference to the Tab.
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-            	tabs[position].setTextColor(getResources().getColor(R.color.selected_tab));
-            	tabs[1-position].setTextColor(getResources().getColor(R.color.unselected_tab));
-            }
-        });
+//        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+//            @Override
+//            public void onPageSelected(int position) {
+//            	tabs[position].setTextColor(getResources().getColor(R.color.selected_tab));
+//            	tabs[1-position].setTextColor(getResources().getColor(R.color.unselected_tab));
+//            }
+//        });
 
     }
     
@@ -185,14 +183,12 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         {
         	cal.add(Calendar.DATE, -1);
         	historyFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
-        	analysisFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
         	return true;
         }
         else if(item.getItemId() == R.id.action_next_day)
         {
         	cal.add(Calendar.DATE, +1);
         	historyFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
-        	analysisFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
         	return true;
         }
         
@@ -238,17 +234,10 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
             switch(position)
             {
             case 0:
-            	if(historyFragment == null)
+            	if(historyFragment== null)
             		historyFragment = new HistoryFragment();
-//            	else
-//            		historyFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
             	return historyFragment;
             case 1:
-            	if(analysisFragment == null)
-            		analysisFragment = new AnalysisFragment();
-//            	else
-//            		analysisFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
-            	return analysisFragment;
             }
             return null;
         }
@@ -256,7 +245,7 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         @Override
         public int getCount() {
             // Show 2 total pages.
-            return 2;
+            return 1;
         }
 
         @Override
@@ -280,6 +269,5 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
 		cal.set(Calendar.MONTH, month);
 		cal.set(Calendar.DATE, day);
 		historyFragment.update(year, month, day);
-    	analysisFragment.update(year, month, day);
 	}
 }

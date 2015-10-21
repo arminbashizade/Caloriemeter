@@ -28,6 +28,8 @@ public class MealHistoryAdapter extends ArrayAdapter<MealConsumption> {
           convertView = LayoutInflater.from(getContext()).inflate(R.layout.meals_list_item, parent, false);
        }
 
+       if(position >= getCount())
+    	   return convertView;
        if(meals.get(position) == null)
     	   return convertView;
        
