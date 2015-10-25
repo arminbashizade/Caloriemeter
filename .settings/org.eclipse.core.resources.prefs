@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/com/armin/caloriemeter/Constants.java=UTF-8
+encoding//src/com/armin/caloriemeter/activities/FoodDetailActivity.java=UTF-8
+encoding//src/com/armin/caloriemeter/activities/ProfileActivity.java=UTF-8
+encoding//src/com/armin/caloriemeter/util/Constants.java=UTF-8
+encoding//src/com/armin/caloriemeter/util/Time.java=UTF-8
+encoding//src/com/armin/caloriemeter/util/Utils.java=UTF-8

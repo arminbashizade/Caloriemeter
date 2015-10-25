@@ -1,7 +1,8 @@
 package com.armin.caloriemeter.activities;
 
 import com.armin.caloriemeter.R;
-import com.armin.caloriemeter.User;
+import com.armin.caloriemeter.util.User;
+import com.armin.caloriemeter.util.Utils;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -9,7 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,6 +28,8 @@ public class TargetCalculatorActivity extends Activity {
 	private TextView dailyTargetTextView;
 	private Spinner lifestyleSpinner;
 	private Spinner dietGoalSpinner;
+	private TextView manualRadioButtonText;
+	private TextView recommendedRadioButtonText;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +39,30 @@ public class TargetCalculatorActivity extends Activity {
 		setupActionBar();
 
 		
-		lifestyleLabel = (TextView) findViewById(R.id.lifestyle_label);
 		dietGoalLabel = (TextView) findViewById(R.id.diet_goal_label);
-		lifestyleSpinner = (Spinner) findViewById(R.id.lifestyle_spinner);
+		lifestyleLabel = (TextView) findViewById(R.id.lifestyle_label);
 		dietGoalSpinner = (Spinner) findViewById(R.id.diet_goal_spinner);
+		lifestyleSpinner = (Spinner) findViewById(R.id.lifestyle_spinner);
 		dailyTargetEditText = (EditText) findViewById(R.id.daily_target_edit_text);
 		dailyTargetTextView = (TextView) findViewById(R.id.daily_target_text_view);
+		manualRadioButtonText = (TextView) findViewById(R.id.manual_radio_button_text_view);
+		recommendedRadioButtonText = (TextView) findViewById(R.id.recommended_radio_button_text_view);
 		
 		lifestyleLabel.setVisibility(View.GONE);
 		dietGoalLabel.setVisibility(View.GONE);
 		lifestyleSpinner.setVisibility(View.GONE);
 		dietGoalSpinner.setVisibility(View.GONE);
 		dailyTargetTextView.setVisibility(View.GONE);
+
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+			    this, R.layout.spinner_rtl_item, getResources().getStringArray(R.array.diet_goal_list));
+
+		dietGoalSpinner.setAdapter(adapter);
+
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(
+			    this, R.layout.spinner_rtl_item, getResources().getStringArray(R.array.lifestyle_list));
+
+		lifestyleSpinner.setAdapter(adapter1);
 		
 		User.setLifestyle(0);
 		User.setDietGoal(0);
@@ -65,7 +82,7 @@ public class TargetCalculatorActivity extends Activity {
 							dietGoalSpinner.setVisibility(View.GONE);
 							dailyTargetTextView.setVisibility(View.GONE);
 							dailyTargetEditText.setVisibility(View.VISIBLE);
-							dailyTargetEditText.setText(dailyTargetEditText.getText());
+							dailyTargetEditText.setText(dailyTargetTextView.getText());
 							User.setDietGoal(3);
 							User.setLifestyle(5);
 							dailyTargetEditText.requestFocus();
@@ -80,11 +97,32 @@ public class TargetCalculatorActivity extends Activity {
 							dailyTargetTextView.setVisibility(View.VISIBLE);
 							dailyTargetEditText.setVisibility(View.GONE);
 							calculateDailyTarget();
+							//TODO persian
 							dailyTargetTextView.setText("1500");
 						}
 					}
 				});
-		
+
+		manualRadioButtonText.setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v)
+					{
+						((RadioButton) findViewById(R.id.manual_radio_button)).setChecked(true);
+						((RadioButton) findViewById(R.id.recommended_radio_button)).setChecked(false);
+					}
+				});
+		recommendedRadioButtonText.setOnClickListener(
+				new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v)
+					{
+						((RadioButton) findViewById(R.id.manual_radio_button)).setChecked(false);
+						((RadioButton) findViewById(R.id.recommended_radio_button)).setChecked(true);
+					}
+				});
 		lifestyleSpinner.setOnItemSelectedListener(
 				new AdapterView.OnItemSelectedListener() {
 
@@ -153,11 +191,11 @@ public class TargetCalculatorActivity extends Activity {
 					dailyTargetEditText.requestFocus();
 					break;
 				}
-				User.setDailyTarget(Integer.parseInt(dailyTargetEditText.getText().toString()));
+				User.setDailyTarget(Integer.parseInt(Utils.toEnglishNumbers(dailyTargetEditText.getText().toString())));
 			}
 			else if(radioGroup.getCheckedRadioButtonId() == R.id.recommended_radio_button)
 			{
-				User.setDailyTarget(Integer.parseInt(dailyTargetTextView.getText().toString()));
+				User.setDailyTarget(Integer.parseInt(Utils.toEnglishNumbers(dailyTargetTextView.getText().toString())));
 			}
 
 			finish();

@@ -2,12 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:orientation="vertical" >
     
-    <TextView 
+    <TextView
         android:id="@+id/date_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:padding="5dp"
         android:text="@string/test_date" />
     
@@ -17,97 +21,111 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:baselineAligned="false" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/consumed_calorie_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/consumed_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/number_unit_margin"
+                    android:layout_marginRight="@dimen/number_unit_margin"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/cal" />
+
+                <TextView
+                    android:id="@+id/consumed_calorie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@string/test_number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/target_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/target_calorie_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/target_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/number_unit_margin"
+                    android:layout_marginRight="@dimen/number_unit_margin"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@string/cal" />
+
+                <TextView
+                    android:id="@+id/target_calorie_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_number" />
+            </LinearLayout>
+        </LinearLayout>
+
         <LinearLayout 
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent">
             
-            <TextView 
+            <TextView
                 android:id="@+id/remaining_calorie_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:text="@string/remaining_bold" />
 
             <LinearLayout 
                 android:orientation="horizontal"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/number_unit_margin"
+                    android:layout_marginRight="@dimen/number_unit_margin"
+                    android:text="@string/cal" />
         
 	            <TextView 
 	                android:id="@+id/remaining_calorie_amount"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:text="@string/test_number" />
-	            <TextView 
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="@dimen/number_unit_margin"
-	                android:layout_marginRight="@dimen/number_unit_margin"
-	                android:text="@string/cal" />
-	        </LinearLayout>    
-        </LinearLayout>
-        
-        <LinearLayout
-            android:id="@+id/target_layout" 
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            
-            <TextView 
-                android:id="@+id/target_calorie_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/target_bold" />
-
-            <LinearLayout
-                android:orientation="horizontal"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content" >
-        
-	            <TextView 
-	                android:id="@+id/target_calorie_amount"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/test_number" />
-	            <TextView 
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="@dimen/number_unit_margin"
-	                android:layout_marginRight="@dimen/number_unit_margin"
-	                android:text="@string/cal" />
-	        </LinearLayout>    
-        </LinearLayout>
-        
-        <LinearLayout 
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent">
-            
-            <TextView 
-                android:id="@+id/consumed_calorie_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/consumed_bold" />
-
-            <LinearLayout 
-                android:orientation="horizontal"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content" >
-        
-	            <TextView 
-	                android:id="@+id/consumed_calorie"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/test_number" />
-	            <TextView 
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_marginLeft="@dimen/number_unit_margin"
-	                android:layout_marginRight="@dimen/number_unit_margin"
-	                android:text="@string/cal" />
 	        </LinearLayout>    
         </LinearLayout>
     </LinearLayout>
@@ -121,8 +139,7 @@
         android:background="@color/light_theme_color"
         android:headerDividersEnabled="true"
         android:footerDividersEnabled="true"
-        android:listSelector="@android:color/transparent"
-        android:divider="@drawable/divider_with_margin" >
+        android:divider="@drawable/history_divider_with_margin" >
     </ListView>
     
 </LinearLayout>

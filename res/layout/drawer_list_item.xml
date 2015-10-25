@@ -17,8 +17,8 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:textColor="@color/navigation_drawer_item_color"
-        android:paddingLeft="5dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:gravity="left|center_vertical" />
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:gravity="right|center_vertical"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </LinearLayout>

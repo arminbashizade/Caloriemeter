@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Caloriemeter</string>
-    <string name="settings">Settings</string>
-    <string name="history_tab_title">History</string>
-    <string name="analysis_tab_title">Analysis</string>
-    <string name="title_activity_profile">Profile</string>
-    <string name="gender">Gender:</string>
-    <string name="date_of_birth">Date of birth:</string>
-    <string name="height">Height:</string>
-    <string name="weight">Weight:</string>
-    <string name="kg">Kg</string>
-    <string name="cm">cm</string>
-    <string name="cal">Cal</string>
+    <string name="app_name">کالری‌متر</string>
+    <string name="settings">تنظیمات</string>
+    <string name="history_tab_title">سابقه</string>
+    <string name="analysis_tab_title">تحلیل</string>
+    <string name="title_activity_profile">اطلاعات شخصی</string>
+    <string name="gender">جنسیت:</string>
+    <string name="date_of_birth">تاریخ تولد:</string>
+    <string name="height">قد:</string>
+    <string name="weight">وزن:</string>
+    <string name="kg">کیلوگرم</string>
+    <string name="cm">سانتی‌متر</string>
+    <string name="cal">کالری</string>
     <string name="bmi">BMI:</string>
 
     <!-- https://en.wikipedia.org/wiki/Body_mass_index#Categories -->
@@ -25,54 +25,77 @@
     <string name="bmi_7">You\'re not OK7.</string>
     <string name="bmi_8">You\'re not OK8.</string>
     <string name="bmi_test_number">19.2</string>
-    <string name="manual">manual</string>
-    <string name="recommended">recommended</string>
-    <string name="daily_target">Daily target:</string>
-    <string name="diet_goal">Diet goal:</string>
-    <string name="lifestyle">Lifestyle:</string>
-    <string name="action_set_calorie_goal">Set Calorie Goal</string>
-    <string name="done">Done</string>
-    <string name="save">Save</string>
-    <string name="edit">edit</string>
-    <string name="sedantry">Sedantry</string>
-    <string name="lightly_active">Lightly active</string>
-    <string name="moderately_active">Moderately active</string>
-    <string name="very_active">Very active</string>
-    <string name="extra_active">Extra active</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="lose_weight">Lose weight</string>
-    <string name="maintain_weight">Maintain weight</string>
-    <string name="gain_weight">Gain weight</string>
-    <string name="log_off">Log off</string>
-    <string name="profile">Profile</string>
-    <string name="test_number">1234</string>
-    <string name="test_date">12/12/2014</string>
-    <string name="remaining_bold"><b>Remaining</b></string>
-    <string name="target_bold"><b>Target</b></string>
-    <string name="consumed_bold"><b>Consumed</b></string>
-    <string name="next_day">Next day</string>
-    <string name="previous_day">Previous day</string>
-    <string name="pick_date">Pick a date</string>
-    <string name="new_food">Add new food</string>
-    <string name="test_text">test</string>
-    <string name="breakfast">Breakfast</string>
-    <string name="lunch">Lunch</string>
-    <string name="dinner">Dinner</string>
-    <string name="snack">Snack</string>
-    <string name="error_enter_daily_target">Enter daily target, or use recommended amount.</string>
-    <string name="error_enter_date_of_birth">Enter date of birth.</string>
-    <string name="error_enter_height">Enter height.</string>
-    <string name="error_enter_weight">Enter weight.</string>
-    <string name="error_enter_amount">Enter amount.</string>
-    <string name="search_title">Search for food&#8230;</string>
-    <string name="action_search">Search</string>
-    <string name="amount">Amount:</string>
-    <string name="meal">Meal:</string>
-    <string name="add_new_food">Add new food</string>
-    <string name="create_new_food">Done</string>
-
-    <string-array name="lifestyle_list">
+    <string name="manual">خودم</string>
+    <string name="recommended">پیشنهاد سیستم</string>
+    <string name="daily_target">هدف روزانه:</string>
+    <string name="diet_goal">رژیم برای:</string>
+    <string name="lifestyle">سبک زندگی:</string>
+    <string name="action_set_calorie_goal">تنظیم مصرف روزانه</string>
+    <string name="done">خب</string>
+    <string name="cancel">برگرد</string>
+    <string name="save">ذخیره</string>
+    <string name="edit">ویرایش</string>
+    <string name="sedantry">کم‌تحرک</string>
+    <string name="lightly_active">کمی فعال</string>
+    <string name="moderately_active">نیمه‌فعال</string>
+    <string name="very_active">خیلی فعال</string>
+    <string name="extra_active">خیلی خیلی فعال</string>
+    <string name="male">مرد</string>
+    <string name="female">زن</string>
+    <string name="lose_weight">کاهش وزن</string>
+    <string name="maintain_weight">حفظ وزن</string>
+    <string name="gain_weight">افزایش وزن</string>
+    <string name="log_off">پاک‌کردن اطلاعات</string>
+    <string name="profile">اطلاعات شخصی</string>
+    <string name="test_number">۱۲۳۴</string>
+    <string name="test_date">۱۲/۱۲/۹۴</string>
+    <string name="remaining_bold"><b>مانده</b></string>
+    <string name="target_bold"><b>هدف</b></string>
+    <string name="consumed_bold"><b>رفته</b></string>
+    <string name="next_day">روز بعد</string>
+    <string name="previous_day">روز قبل</string>
+    <string name="pick_date">انتخاب تاریخ</string>
+    <string name="new_food">مصرف جدید</string>
+    <string name="test_text">تست</string>
+    <string name="breakfast">صبحانه</string>
+    <string name="lunch">ناهار</string>
+    <string name="dinner">شام</string>
+    <string name="snack">میان‌وعده</string>
+    <string name="error_enter_daily_target">مصرف روزانه را مشخص کنید</string>
+    <string name="error_enter_date_of_birth">تاریخ تولد را وارد کنید</string>
+    <string name="error_enter_height">قد را وارد کنید</string>
+    <string name="error_enter_weight">وزن را وارد کنید</string>
+    <string name="error_enter_amount">مقدار را وارد کنید</string>
+    <string name="search_title">جست‌وجوی خوراکی&#8230;</string>
+    <string name="action_search">جست‌وجو</string>
+    <string name="amount">مقدار:</string>
+    <string name="meal">وعده:</string>
+    <string name="add_new_food">تعریف غذای جدید</string>
+    <string name="create_new_food">خب</string>
+    <string name="name">اسم:</string>
+    <string name="serving_size">مقدار:</string>
+    <string name="serving_unit">واحد اندازه‌گیری:</string>
+    <string name="energy">انرژی:</string>
+    <string name="add_ingridient">اضافه‌کردن ترکیبات</string>
+    <string name="ingridient_dialog_message">اضافه کردن ترکیبات</string>
+    <string name="error_food_exists">این خوراکی با این واحد اندازه‌گیری موجود است</string>
+    <string name="error_enter_food_name">اسم خوراکی را وارد کنید</string>
+    <string name="error_enter_serving_amount">مقدار را وارد کنید</string>
+    <string name="error_enter_serving_unit">واحد اندازه‌گیری را وارد کنید</string>
+    <string name="error_enter_energy">انرژی خوراکی را وارد کنید</string>
+    <string name="delete_consumption_dialog_message">پاک کنم؟</string>
+    <string name="yes">بله</string>
+    <string name="no">نه</string>
+    <string name="nothing_was_found">چیزی پیدا نشد!</string>
+    <string name="click_here_to">اینجا رو بزن تا</string>
+    <string name="add_this_food">رو اضافه کنی</string>
+    <string name="good_job">امروز خوب بود</string>
+    <string name="too_high">امروز پرخوری کردی</string>
+    <string name="too_low">امروز کم‌کاری کردی</string>
+    <string name="target"><b>هدف:</b></string>
+    <string name="consumed"><b>مصرف:</b></string>
+    
+	<string-array name="lifestyle_list">
         <item>@string/sedantry</item>
         <item>@string/lightly_active</item>
         <item>@string/moderately_active</item>
@@ -109,14 +132,13 @@
         <item>@string/snack</item>
     </string-array>
 
-    <string name="title_activity_target_calculator">Set Calorie Target</string>
-    <string name="title_activity_main">Caloriemeter</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_target_calculator">تنظیم مصرف روزانه</string>
+    <string name="title_activity_main">کالری‌متر</string>
+    <string name="action_settings">تنظیمات</string>
     <string name="title_activity_main_activity1">MainActivity1</string>
     <string name="title_activity_main_activity2">MainActivity2</string>
-    <string name="title_activity_new_consumption">Add Food</string>
-    <string name="title_activity_food_detail">Food</string>
-    <string name="title_activity_new_food">Add New Food</string>
+    <string name="title_activity_new_consumption">مصرف جدید</string>
+    <string name="title_activity_food_detail">خوراکی</string>
+    <string name="title_activity_new_food">تعریف خوراکی جدید</string>
 
 </resources>

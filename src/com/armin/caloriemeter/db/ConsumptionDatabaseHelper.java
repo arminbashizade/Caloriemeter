@@ -23,6 +23,14 @@ public class ConsumptionDatabaseHelper extends SQLiteOpenHelper
 		db.execSQL(ConsumptionContract.SQL_CREATE_CONSUMPTION);
 	}
 
+	public void deleteDatabase(SQLiteDatabase db)
+	{
+		db.execSQL(ConsumptionContract.SQL_DELETE_CONSUMPTION);
+		db.execSQL(ConsumptionContract.SQL_DELETE_DAILY_CONSUMPTION);
+		db.execSQL(ConsumptionContract.SQL_CREATE_CONSUMPTION);
+		db.execSQL(ConsumptionContract.SQL_CREATE_DAILY_CONSUMPTION);
+	}
+	
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
 	{

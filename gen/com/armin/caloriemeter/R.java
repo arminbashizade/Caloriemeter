@@ -15,44 +15,357 @@ public final class R {
         public static final int slide_out_right=0x7f040003;
     }
     public static final class array {
-        public static final int bmi_explanations=0x7f0a0003;
-        public static final int diet_goal_list=0x7f0a0002;
-        public static final int gender_list=0x7f0a0001;
-        public static final int lifestyle_list=0x7f0a0000;
-        public static final int meal_items=0x7f0a0005;
-        public static final int navigation_menu_items=0x7f0a0004;
+        public static final int bmi_explanations=0x7f0c0003;
+        public static final int diet_goal_list=0x7f0c0002;
+        public static final int gender_list=0x7f0c0001;
+        public static final int lifestyle_list=0x7f0c0000;
+        public static final int meal_items=0x7f0c0005;
+        public static final int navigation_menu_items=0x7f0c0004;
     }
     public static final class attr {
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int centered=0x7f010006;
+        /**  Screen edge padding. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int clipPadding=0x7f010011;
+        /**  Length of the delay to fade the indicator. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeDelay=0x7f01001d;
+        /**  Length of the indicator fade to transparent. 
+         <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeLength=0x7f01001e;
+        /**  Whether or not the selected indicator fades. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fades=0x7f01001c;
+        /**  Color of the filled circle that represents the current page. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fillColor=0x7f01000a;
+        /**  Color of the footer line and indicator. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerColor=0x7f010012;
+        /**  Height of the indicator above the footer line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerIndicatorHeight=0x7f010015;
+        /**  Style of the indicator. Default is triangle. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>triangle</code></td><td>1</td><td></td></tr>
+<tr><td><code>underline</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int footerIndicatorStyle=0x7f010014;
+        /**  Left and right padding of the underline indicator. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerIndicatorUnderlinePadding=0x7f010016;
+        /**  Height of the footer line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerLineHeight=0x7f010013;
+        /**  Padding between the bottom of the title and the footer. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int footerPadding=0x7f010017;
+        /**  Width of the gap between each indicator line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int gapWidth=0x7f010010;
+        /**  Position of the line. 
+         <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>bottom</code></td><td>0</td><td></td></tr>
+<tr><td><code>top</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int linePosition=0x7f010018;
+        /**  Width of each indicator line. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int lineWidth=0x7f01000f;
+        /**  Color of the filled circles that represents pages. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int pageColor=0x7f01000b;
+        /**  Radius of the circles. This is also the spacing between circles. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radius=0x7f01000c;
+        /**  Whether or not the selected item is displayed as bold. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectedBold=0x7f010019;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectedColor=0x7f010007;
+        /**  Whether or not the selected indicator snaps to the circles. 
+         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int snap=0x7f01000d;
+        /**  Color of the open circles. 
+         <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int strokeColor=0x7f01000e;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int strokeWidth=0x7f010008;
+        /**  Padding between titles when bumping into each other. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int titlePadding=0x7f01001a;
+        /**  Padding between titles and the top of the View. 
+         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int topPadding=0x7f01001b;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int unselectedColor=0x7f010009;
+        /**  Style of the circle indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiCirclePageIndicatorStyle=0x7f010000;
+        /**  Style of the icon indicator's views. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiIconPageIndicatorStyle=0x7f010001;
+        /**  Style of the line indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiLinePageIndicatorStyle=0x7f010002;
+        /**  Style of the tab indicator's tabs. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiTabPageIndicatorStyle=0x7f010004;
+        /**  Style of the title indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiTitlePageIndicatorStyle=0x7f010003;
+        /**  Style of the underline indicator. 
+         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int vpiUnderlinePageIndicatorStyle=0x7f010005;
+    }
+    public static final class bool {
+        public static final int default_circle_indicator_centered=0x7f0a0000;
+        public static final int default_circle_indicator_snap=0x7f0a0001;
+        public static final int default_line_indicator_centered=0x7f0a0002;
+        public static final int default_title_indicator_selected_bold=0x7f0a0003;
+        public static final int default_underline_indicator_fades=0x7f0a0004;
     }
     public static final class color {
-        public static final int action_bar_color=0x7f05000d;
-        public static final int action_bar_darker_color=0x7f050010;
-        public static final int action_bar_title_color=0x7f050011;
+        public static final int action_bar_color=0x7f05001e;
+        public static final int action_bar_darker_color=0x7f05001f;
+        public static final int action_bar_title_color=0x7f050022;
         public static final int ampm_text_color=0x7f05000a;
-        public static final int black=0x7f050019;
+        public static final int black=0x7f05002b;
         public static final int blue=0x7f050005;
         public static final int calendar_header=0x7f050008;
         public static final int circle_background=0x7f050001;
         public static final int darker_blue=0x7f050006;
-        public static final int date_picker_selector=0x7f05001a;
+        public static final int date_picker_selector=0x7f05002c;
         public static final int date_picker_text_normal=0x7f050007;
         public static final int date_picker_view_animator=0x7f050009;
-        public static final int date_picker_year_selector=0x7f05001b;
-        public static final int done_text_color=0x7f05001c;
+        public static final int date_picker_year_selector=0x7f05002d;
+        public static final int default_circle_indicator_fill_color=0x7f050015;
+        public static final int default_circle_indicator_page_color=0x7f050016;
+        public static final int default_circle_indicator_stroke_color=0x7f050017;
+        public static final int default_line_indicator_selected_color=0x7f050018;
+        public static final int default_line_indicator_unselected_color=0x7f050019;
+        public static final int default_title_indicator_footer_color=0x7f05001a;
+        public static final int default_title_indicator_selected_color=0x7f05001b;
+        public static final int default_title_indicator_text_color=0x7f05001c;
+        public static final int default_underline_indicator_selected_color=0x7f05001d;
+        public static final int done_text_color=0x7f05002e;
         public static final int done_text_color_disabled=0x7f050004;
         public static final int done_text_color_normal=0x7f050003;
-        public static final int green=0x7f050018;
-        public static final int light_theme_color=0x7f05000e;
+        public static final int green=0x7f05002a;
+        public static final int hint_color=0x7f050023;
+        public static final int light_theme_color=0x7f050020;
         public static final int line_background=0x7f050002;
-        public static final int link=0x7f050016;
-        public static final int list_divider_color=0x7f05000f;
-        public static final int navigation_drawer_item_color=0x7f050014;
+        public static final int link=0x7f050028;
+        public static final int list_divider_color=0x7f050021;
+        public static final int navigation_drawer_item_color=0x7f050026;
         public static final int numbers_text_color=0x7f05000b;
-        public static final int red=0x7f050017;
-        public static final int selected_tab=0x7f050012;
-        public static final int tab_bar_color=0x7f050015;
+        public static final int red=0x7f050029;
+        public static final int selected_tab=0x7f050024;
+        public static final int tab_bar_color=0x7f050027;
         public static final int transparent_black=0x7f05000c;
-        public static final int unselected_tab=0x7f050013;
+        public static final int unselected_tab=0x7f050025;
+        public static final int vpi__background_holo_dark=0x7f05000d;
+        public static final int vpi__background_holo_light=0x7f05000e;
+        public static final int vpi__bright_foreground_disabled_holo_dark=0x7f050011;
+        public static final int vpi__bright_foreground_disabled_holo_light=0x7f050012;
+        public static final int vpi__bright_foreground_holo_dark=0x7f05000f;
+        public static final int vpi__bright_foreground_holo_light=0x7f050010;
+        public static final int vpi__bright_foreground_inverse_holo_dark=0x7f050013;
+        public static final int vpi__bright_foreground_inverse_holo_light=0x7f050014;
+        public static final int vpi__dark_theme=0x7f05002f;
+        public static final int vpi__light_theme=0x7f050030;
         public static final int white=0x7f050000;
     }
     public static final class dimen {
@@ -62,11 +375,11 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060021;
-        public static final int activity_vertical_margin=0x7f060022;
+        public static final int activity_horizontal_margin=0x7f06002e;
+        public static final int activity_vertical_margin=0x7f06002f;
         public static final int ampm_label_size=0x7f060014;
         public static final int ampm_left_padding=0x7f060015;
-        public static final int bottom_margin_little=0x7f060027;
+        public static final int bottom_margin_little=0x7f060035;
         public static final int date_picker_component_width=0x7f060001;
         public static final int date_picker_header_height=0x7f060002;
         public static final int date_picker_header_text_size=0x7f06000d;
@@ -74,15 +387,28 @@ public final class R {
         public static final int day_number_extra=0x7f060004;
         public static final int day_number_select_circle_radius=0x7f060008;
         public static final int day_number_size=0x7f06000f;
+        public static final int default_circle_indicator_radius=0x7f060021;
+        public static final int default_circle_indicator_stroke_width=0x7f060022;
+        public static final int default_line_indicator_gap_width=0x7f060024;
+        public static final int default_line_indicator_line_width=0x7f060023;
+        public static final int default_line_indicator_stroke_width=0x7f060025;
+        public static final int default_title_indicator_clip_padding=0x7f060026;
+        public static final int default_title_indicator_footer_indicator_height=0x7f060028;
+        public static final int default_title_indicator_footer_indicator_underline_padding=0x7f060029;
+        public static final int default_title_indicator_footer_line_height=0x7f060027;
+        public static final int default_title_indicator_footer_padding=0x7f06002a;
+        public static final int default_title_indicator_text_size=0x7f06002b;
+        public static final int default_title_indicator_title_padding=0x7f06002c;
+        public static final int default_title_indicator_top_padding=0x7f06002d;
         public static final int dialog_height=0x7f06001b;
-        public static final int divider_height=0x7f060024;
-        public static final int divider_margin=0x7f060026;
+        public static final int divider_height=0x7f060031;
+        public static final int divider_margin=0x7f060034;
         public static final int done_label_size=0x7f060000;
         public static final int extra_time_label_margin=0x7f060013;
         public static final int footer_height=0x7f06001f;
         public static final int header_height=0x7f060017;
         public static final int left_side_width=0x7f06001c;
-        public static final int list_item_inside_margin=0x7f060025;
+        public static final int list_item_inside_margin=0x7f060032;
         public static final int minimum_margin_sides=0x7f060019;
         public static final int minimum_margin_top_bottom=0x7f06001a;
         public static final int month_day_label_text_size=0x7f060007;
@@ -91,13 +417,14 @@ public final class R {
         public static final int month_list_item_padding=0x7f06001d;
         public static final int month_list_item_size=0x7f06001e;
         public static final int month_select_circle_radius=0x7f060009;
-        public static final int number_unit_margin=0x7f060023;
+        public static final int number_unit_margin=0x7f060030;
         public static final int picker_dimen=0x7f060018;
         public static final int selected_calendar_layout_height=0x7f060003;
         public static final int selected_date_day_size=0x7f06000b;
         public static final int selected_date_month_size=0x7f06000c;
         public static final int selected_date_year_size=0x7f06000a;
         public static final int separator_padding=0x7f060016;
+        public static final int text_view_bottom_margin=0x7f060033;
         public static final int time_label_right_padding=0x7f060020;
         public static final int time_label_size=0x7f060012;
         public static final int year_label_height=0x7f060010;
@@ -105,170 +432,220 @@ public final class R {
     }
     public static final class drawable {
         public static final int add_new_food=0x7f020000;
-        public static final int divider=0x7f020001;
-        public static final int divider_with_margin=0x7f020002;
+        public static final int button_background=0x7f020001;
+        public static final int delete=0x7f020002;
         public static final int drawer_shadow=0x7f020003;
-        public static final int ic_action_edit=0x7f020004;
-        public static final int ic_action_go_to_today=0x7f020005;
-        public static final int ic_action_next_item=0x7f020006;
-        public static final int ic_action_person=0x7f020007;
-        public static final int ic_action_previous_item=0x7f020008;
-        public static final int ic_action_search=0x7f020009;
-        public static final int ic_drawer=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
+        public static final int history_divider=0x7f020004;
+        public static final int history_divider_with_margin=0x7f020005;
+        public static final int ic_action_delete=0x7f020006;
+        public static final int ic_action_edit=0x7f020007;
+        public static final int ic_action_go_to_today=0x7f020008;
+        public static final int ic_action_next_item=0x7f020009;
+        public static final int ic_action_person=0x7f02000a;
+        public static final int ic_action_previous_item=0x7f02000b;
+        public static final int ic_action_search=0x7f02000c;
+        public static final int ic_drawer=0x7f02000d;
+        public static final int ic_launcher=0x7f02000e;
+        public static final int log_off=0x7f02000f;
+        public static final int notification_icon=0x7f020010;
+        public static final int plus=0x7f020011;
+        public static final int search_divider=0x7f020012;
+        public static final int search_divider_with_margin=0x7f020013;
+        public static final int vpi__tab_indicator=0x7f020014;
+        public static final int vpi__tab_selected_focused_holo=0x7f020015;
+        public static final int vpi__tab_selected_holo=0x7f020016;
+        public static final int vpi__tab_selected_pressed_holo=0x7f020017;
+        public static final int vpi__tab_unselected_focused_holo=0x7f020018;
+        public static final int vpi__tab_unselected_holo=0x7f020019;
+        public static final int vpi__tab_unselected_pressed_holo=0x7f02001a;
     }
     public static final class id {
-        public static final int action_add_food=0x7f08005f;
-        public static final int action_add_new_food=0x7f080064;
-        public static final int action_create_new_food=0x7f080065;
-        public static final int action_done=0x7f080066;
-        public static final int action_new_food=0x7f080060;
-        public static final int action_next_day=0x7f080063;
-        public static final int action_pick_date=0x7f080061;
-        public static final int action_previous_day=0x7f080062;
-        public static final int action_save=0x7f080067;
-        public static final int am_pm_text_view=0x7f080012;
-        public static final int amount_edit_text=0x7f080009;
-        public static final int ampm_hitspace=0x7f08005a;
-        public static final int ampm_label=0x7f08005b;
+        public static final int action_add_food=0x7f080074;
+        public static final int action_add_new_food=0x7f080075;
+        public static final int action_create_new_food=0x7f08007b;
+        public static final int action_done=0x7f08007c;
+        public static final int action_done_ingridients=0x7f08007a;
+        public static final int action_new_food=0x7f080076;
+        public static final int action_next_day=0x7f080079;
+        public static final int action_pick_date=0x7f080077;
+        public static final int action_previous_day=0x7f080078;
+        public static final int action_save=0x7f08007d;
+        public static final int add_new_ingredient_button=0x7f08004f;
+        public static final int am_pm_text_view=0x7f080017;
+        public static final int amount_edit_text=0x7f08000f;
+        public static final int ampm_hitspace=0x7f08006f;
+        public static final int ampm_label=0x7f080070;
         public static final int animator=0x7f080007;
-        public static final int bmi_explanation=0x7f080034;
-        public static final int bmi_label=0x7f080032;
-        public static final int bmi_number=0x7f080033;
-        public static final int calorie_goal_text_view_profile=0x7f08002f;
-        public static final int calorie_label=0x7f08003b;
-        public static final int calorie_label_profile=0x7f080031;
-        public static final int calorie_target_edit_button=0x7f080030;
-        public static final int calorie_target_label=0x7f08002e;
-        public static final int center_view=0x7f080054;
-        public static final int cm_label=0x7f08002a;
-        public static final int consumed_calorie=0x7f080049;
-        public static final int consumed_calorie_label=0x7f080048;
-        public static final int consumption_amount=0x7f08004f;
-        public static final int consumption_energy=0x7f08004e;
-        public static final int consumption_food_name=0x7f08004c;
-        public static final int consumption_meal=0x7f080050;
-        public static final int consumption_time=0x7f080051;
-        public static final int consumption_unit=0x7f080052;
-        public static final int daily_target_edit_text=0x7f080039;
-        public static final int daily_target_label=0x7f080038;
-        public static final int daily_target_text_view=0x7f08003a;
-        public static final int date_label=0x7f080042;
-        public static final int date_of_birth_edit_text=0x7f080027;
-        public static final int date_of_birth_label=0x7f080026;
+        public static final int bmi_explanation=0x7f08003e;
+        public static final int bmi_label=0x7f08003c;
+        public static final int bmi_number=0x7f08003d;
+        public static final int bottom=0x7f08000c;
+        public static final int calorie_goal_text_view_profile=0x7f08003a;
+        public static final int calorie_label=0x7f080047;
+        public static final int calorie_label_profile=0x7f080038;
+        public static final int calorie_target_edit_button=0x7f080039;
+        public static final int calorie_target_label=0x7f08003b;
+        public static final int center_view=0x7f080069;
+        public static final int cm_label=0x7f080032;
+        public static final int consumed_calorie=0x7f080054;
+        public static final int consumed_calorie_label=0x7f080053;
+        public static final int consumption_amount=0x7f080066;
+        public static final int consumption_energy=0x7f080063;
+        public static final int consumption_food_name=0x7f080061;
+        public static final int consumption_meal=0x7f080064;
+        public static final int consumption_time=0x7f080065;
+        public static final int consumption_unit=0x7f080067;
+        public static final int daily_target_edit_text=0x7f080049;
+        public static final int daily_target_label=0x7f08004a;
+        public static final int daily_target_text_view=0x7f080048;
+        public static final int date_label=0x7f080052;
+        public static final int date_of_birth_edit_text=0x7f080030;
+        public static final int date_of_birth_label=0x7f080031;
         public static final int date_picker_day=0x7f080005;
         public static final int date_picker_header=0x7f080001;
         public static final int date_picker_month=0x7f080004;
         public static final int date_picker_month_and_day=0x7f080003;
         public static final int date_picker_year=0x7f080006;
         public static final int day_picker_selected_date_layout=0x7f080002;
-        public static final int diet_goal_label=0x7f08003e;
-        public static final int diet_goal_spinner=0x7f08003f;
+        public static final int delete_image=0x7f080060;
+        public static final int diet_goal_label=0x7f08004e;
+        public static final int diet_goal_spinner=0x7f08004d;
         public static final int done=0x7f080000;
-        public static final int done_button=0x7f08005e;
-        public static final int drawer_layout=0x7f080013;
-        public static final int email=0x7f080019;
-        public static final int energy_text_view=0x7f08000b;
-        public static final int forgot_password_link=0x7f080021;
-        public static final int gender_label=0x7f080024;
-        public static final int gender_spinner=0x7f080025;
-        public static final int height_edit_text=0x7f080029;
-        public static final int height_label=0x7f080028;
-        public static final int history_list_view=0x7f08004a;
-        public static final int hour_space=0x7f080055;
-        public static final int hours=0x7f080057;
-        public static final int kg_label=0x7f08002d;
-        public static final int left_drawer=0x7f080015;
-        public static final int lifestyle_label=0x7f08003c;
-        public static final int lifestyle_spinner=0x7f08003d;
-        public static final int login=0x7f08001b;
-        public static final int login_form=0x7f080018;
-        public static final int login_status=0x7f080016;
-        public static final int login_status_message=0x7f080017;
-        public static final int manual_radio_button=0x7f080036;
-        public static final int meal_spinner=0x7f08000d;
-        public static final int minutes=0x7f080059;
-        public static final int minutes_space=0x7f080058;
-        public static final int month_day_text_view=0x7f08000f;
+        public static final int done_button=0x7f080073;
+        public static final int drawer_layout=0x7f080018;
+        public static final int email=0x7f08001e;
+        public static final int energy_text_view=0x7f080011;
+        public static final int forgot_password_link=0x7f080026;
+        public static final int gender_label=0x7f08002f;
+        public static final int gender_spinner=0x7f08002e;
+        public static final int height_edit_text=0x7f080033;
+        public static final int height_label=0x7f080034;
+        public static final int history_list_view=0x7f08005a;
+        public static final int hour_space=0x7f08006a;
+        public static final int hours=0x7f08006c;
+        public static final int ingridient_amount=0x7f08005e;
+        public static final int ingridient_amount_edit_text=0x7f08005c;
+        public static final int ingridient_name_text_view=0x7f08005f;
+        public static final int ingridient_unit=0x7f08005d;
+        public static final int ingridient_unit_spinner=0x7f08005b;
+        public static final int kg_label=0x7f080035;
+        public static final int left_drawer=0x7f08001a;
+        public static final int lifestyle_label=0x7f08004c;
+        public static final int lifestyle_spinner=0x7f08004b;
+        public static final int login=0x7f080020;
+        public static final int login_form=0x7f08001d;
+        public static final int login_status=0x7f08001b;
+        public static final int login_status_message=0x7f08001c;
+        public static final int manual_radio_button=0x7f080046;
+        public static final int manual_radio_button_text_view=0x7f080045;
+        public static final int meal_spinner=0x7f080012;
+        public static final int minutes=0x7f08006e;
+        public static final int minutes_space=0x7f08006d;
+        public static final int month_day_text_view=0x7f080014;
         public static final int month_text_view=0x7f080008;
-        public static final int navigarion_drawer_item_button=0x7f080041;
-        public static final int navigarion_drawer_item_button_image=0x7f080040;
-        public static final int new_food_search_results_list_view=0x7f080023;
-        public static final int pager=0x7f080014;
-        public static final int password=0x7f08001a;
-        public static final int recommended_radio_button=0x7f080037;
-        public static final int register=0x7f08001d;
-        public static final int register_button=0x7f08001f;
-        public static final int register_sign_in_link=0x7f080020;
-        public static final int remaining_calorie_amount=0x7f080044;
-        public static final int remaining_calorie_label=0x7f080043;
-        public static final int repeat_password=0x7f08001c;
-        public static final int result_text_view=0x7f080053;
-        public static final int search_edit_text=0x7f080022;
-        public static final int section_label=0x7f08004b;
-        public static final int separator=0x7f080056;
-        public static final int set_target_radio_group=0x7f080035;
-        public static final int sign_in_button=0x7f08001e;
-        public static final int target_calorie_amount=0x7f080047;
-        public static final int target_calorie_label=0x7f080046;
-        public static final int target_layout=0x7f080045;
-        public static final int textView1=0x7f08004d;
-        public static final int textView2=0x7f08000c;
-        public static final int time_picker=0x7f08005d;
-        public static final int time_picker_dialog=0x7f08005c;
-        public static final int time_text_view=0x7f080011;
-        public static final int unit_spinner=0x7f08000a;
-        public static final int weekday_text_view=0x7f08000e;
-        public static final int weight_edit_text=0x7f08002c;
-        public static final int weight_label=0x7f08002b;
-        public static final int year_month_text_view=0x7f080010;
+        public static final int navigarion_drawer_item_button=0x7f080051;
+        public static final int navigarion_drawer_item_button_image=0x7f080050;
+        public static final int new_food_energy_edit_text=0x7f08002c;
+        public static final int new_food_energy_text_view=0x7f08002b;
+        public static final int new_food_ingridients=0x7f08002d;
+        public static final int new_food_name_edit_text=0x7f080027;
+        public static final int new_food_search_results_list_view=0x7f080041;
+        public static final int new_food_serving_size_edit_text=0x7f08002a;
+        public static final int new_food_serving_unit_edit_text=0x7f080028;
+        public static final int new_food_unit_text_view=0x7f080029;
+        public static final int none=0x7f080009;
+        public static final int nothing_was_found_text_view=0x7f080040;
+        public static final int pager=0x7f080019;
+        public static final int password=0x7f08001f;
+        public static final int recommended_radio_button=0x7f080044;
+        public static final int recommended_radio_button_text_view=0x7f080043;
+        public static final int register=0x7f080022;
+        public static final int register_button=0x7f080024;
+        public static final int register_sign_in_link=0x7f080025;
+        public static final int remaining_calorie_amount=0x7f080059;
+        public static final int remaining_calorie_label=0x7f080058;
+        public static final int repeat_password=0x7f080021;
+        public static final int result_text_view=0x7f080068;
+        public static final int search_edit_text=0x7f08003f;
+        public static final int separator=0x7f08006b;
+        public static final int set_target_radio_group=0x7f080042;
+        public static final int sign_in_button=0x7f080023;
+        public static final int target_calorie_amount=0x7f080057;
+        public static final int target_calorie_label=0x7f080056;
+        public static final int target_layout=0x7f080055;
+        public static final int textView1=0x7f080062;
+        public static final int textView2=0x7f080010;
+        public static final int time_picker=0x7f080072;
+        public static final int time_picker_dialog=0x7f080071;
+        public static final int time_text_view=0x7f080016;
+        public static final int top=0x7f08000d;
+        public static final int triangle=0x7f08000a;
+        public static final int underline=0x7f08000b;
+        public static final int unit_spinner=0x7f08000e;
+        public static final int weekday_text_view=0x7f080013;
+        public static final int weight_edit_text=0x7f080036;
+        public static final int weight_label=0x7f080037;
+        public static final int year_month_text_view=0x7f080015;
+    }
+    public static final class integer {
+        public static final int default_circle_indicator_orientation=0x7f0b0000;
+        public static final int default_title_indicator_footer_indicator_style=0x7f0b0001;
+        public static final int default_title_indicator_line_position=0x7f0b0002;
+        public static final int default_underline_indicator_fade_delay=0x7f0b0003;
+        public static final int default_underline_indicator_fade_length=0x7f0b0004;
     }
     public static final class layout {
         public static final int activity_food_detail=0x7f030000;
         public static final int activity_history=0x7f030001;
         public static final int activity_login=0x7f030002;
         public static final int activity_main=0x7f030003;
-        public static final int activity_new_consumption=0x7f030004;
-        public static final int activity_new_food=0x7f030005;
-        public static final int activity_profile=0x7f030006;
+        public static final int activity_new_food=0x7f030004;
+        public static final int activity_profile=0x7f030005;
+        public static final int activity_search=0x7f030006;
         public static final int activity_target_calculator=0x7f030007;
-        public static final int date_picker_dialog=0x7f030008;
-        public static final int date_picker_done_button=0x7f030009;
-        public static final int date_picker_header_view=0x7f03000a;
-        public static final int date_picker_selected_date=0x7f03000b;
-        public static final int date_picker_view_animator=0x7f03000c;
-        public static final int drawer_list_item=0x7f03000d;
-        public static final int fragment_analysis=0x7f03000e;
-        public static final int fragment_history=0x7f03000f;
-        public static final int fragment_history_dummy=0x7f030010;
-        public static final int meals_list_item=0x7f030011;
-        public static final int result_row=0x7f030012;
-        public static final int time_header_label=0x7f030013;
-        public static final int time_picker_dialog=0x7f030014;
-        public static final int year_label_text_view=0x7f030015;
+        public static final int add_new_ingridient=0x7f030008;
+        public static final int date_picker_dialog=0x7f030009;
+        public static final int date_picker_done_button=0x7f03000a;
+        public static final int date_picker_header_view=0x7f03000b;
+        public static final int date_picker_selected_date=0x7f03000c;
+        public static final int date_picker_view_animator=0x7f03000d;
+        public static final int drawer_list_item=0x7f03000e;
+        public static final int fragment_analysis=0x7f03000f;
+        public static final int fragment_history=0x7f030010;
+        public static final int ingridient_detail=0x7f030011;
+        public static final int ingridient_item=0x7f030012;
+        public static final int meals_list_item=0x7f030013;
+        public static final int result_row=0x7f030014;
+        public static final int spinner_rtl_item=0x7f030015;
+        public static final int time_header_label=0x7f030016;
+        public static final int time_picker_dialog=0x7f030017;
+        public static final int year_label_text_view=0x7f030018;
     }
     public static final class menu {
-        public static final int food_detail=0x7f0b0000;
-        public static final int history=0x7f0b0001;
-        public static final int login=0x7f0b0002;
-        public static final int main=0x7f0b0003;
-        public static final int new_consumption=0x7f0b0004;
-        public static final int new_food=0x7f0b0005;
-        public static final int profile=0x7f0b0006;
-        public static final int target_calculator=0x7f0b0007;
+        public static final int food_detail=0x7f0d0000;
+        public static final int food_search=0x7f0d0001;
+        public static final int history=0x7f0d0002;
+        public static final int ingridient_search=0x7f0d0003;
+        public static final int login=0x7f0d0004;
+        public static final int main=0x7f0d0005;
+        public static final int new_food=0x7f0d0006;
+        public static final int profile=0x7f0d0007;
+        public static final int target_calculator=0x7f0d0008;
     }
     public static final class string {
-        public static final int action_forgot_password_underlined=0x7f07006e;
-        public static final int action_register=0x7f07006f;
-        public static final int action_search=0x7f070059;
+        public static final int action_forgot_password_underlined=0x7f070084;
+        public static final int action_register=0x7f070085;
+        public static final int action_search=0x7f07005a;
         public static final int action_set_calorie_goal=0x7f070035;
-        public static final int action_settings=0x7f070060;
-        public static final int action_sign_in=0x7f07006b;
-        public static final int action_sign_in_link_underlined=0x7f07006c;
-        public static final int action_sign_in_short=0x7f070070;
-        public static final int action_sign_up_link_underlined=0x7f07006d;
-        public static final int add_new_food=0x7f07005c;
-        public static final int amount=0x7f07005a;
+        public static final int action_settings=0x7f070077;
+        public static final int action_sign_in=0x7f070081;
+        public static final int action_sign_in_link_underlined=0x7f070082;
+        public static final int action_sign_in_short=0x7f070086;
+        public static final int action_sign_up_link_underlined=0x7f070083;
+        public static final int add_ingridient=0x7f070063;
+        public static final int add_new_food=0x7f07005d;
+        public static final int add_this_food=0x7f07006f;
+        public static final int amount=0x7f07005b;
         public static final int ampm_circle_radius_multiplier=0x7f070003;
         public static final int analysis_tab_title=0x7f07001d;
         public static final int app_name=0x7f07001a;
@@ -284,43 +661,52 @@ public final class R {
         public static final int bmi_7=0x7f07002d;
         public static final int bmi_8=0x7f07002e;
         public static final int bmi_test_number=0x7f07002f;
-        public static final int breakfast=0x7f07004f;
+        public static final int breakfast=0x7f070050;
         public static final int cal=0x7f070025;
+        public static final int cancel=0x7f070037;
         public static final int circle_radius_multiplier=0x7f070000;
         public static final int circle_radius_multiplier_24HourMode=0x7f070001;
+        public static final int click_here_to=0x7f07006e;
         public static final int cm=0x7f070024;
-        public static final int consumed_bold=0x7f070049;
-        public static final int create_new_food=0x7f07005d;
+        public static final int consumed=0x7f070074;
+        public static final int consumed_bold=0x7f07004a;
+        public static final int create_new_food=0x7f07005e;
         public static final int daily_target=0x7f070032;
         public static final int date_of_birth=0x7f070020;
         public static final int day_of_week_label_typeface=0x7f070011;
         public static final int day_picker_description=0x7f07000b;
+        public static final int delete_consumption_dialog_message=0x7f07006a;
         /**  Accessibility announcement when a number that had been typed in is deleted [CHAR_LIMIT=NONE] 
          */
         public static final int deleted_key=0x7f070014;
         public static final int diet_goal=0x7f070033;
-        public static final int dinner=0x7f070051;
+        public static final int dinner=0x7f070052;
         public static final int done=0x7f070036;
         public static final int done_label=0x7f07000a;
-        public static final int edit=0x7f070038;
-        public static final int error_email_exists=0x7f070079;
-        public static final int error_enter_amount=0x7f070057;
-        public static final int error_enter_daily_target=0x7f070053;
-        public static final int error_enter_date_of_birth=0x7f070054;
-        public static final int error_enter_height=0x7f070055;
-        public static final int error_enter_weight=0x7f070056;
-        public static final int error_field_required=0x7f070078;
-        public static final int error_incorrect_password=0x7f070076;
-        public static final int error_invalid_email=0x7f070073;
-        public static final int error_invalid_password=0x7f070074;
-        public static final int error_invalid_username_or_password=0x7f070077;
-        public static final int error_password_match=0x7f070075;
-        public static final int extra_active=0x7f07003d;
-        public static final int female=0x7f07003f;
-        public static final int gain_weight=0x7f070042;
+        public static final int edit=0x7f070039;
+        public static final int energy=0x7f070062;
+        public static final int error_email_exists=0x7f07008e;
+        public static final int error_enter_amount=0x7f070058;
+        public static final int error_enter_daily_target=0x7f070054;
+        public static final int error_enter_date_of_birth=0x7f070055;
+        public static final int error_enter_energy=0x7f070069;
+        public static final int error_enter_food_name=0x7f070066;
+        public static final int error_enter_height=0x7f070056;
+        public static final int error_enter_serving_amount=0x7f070067;
+        public static final int error_enter_serving_unit=0x7f070068;
+        public static final int error_enter_weight=0x7f070057;
+        public static final int error_field_required=0x7f07008d;
+        public static final int error_food_exists=0x7f070065;
+        public static final int error_invalid_email=0x7f070089;
+        public static final int error_invalid_password=0x7f07008a;
+        public static final int error_invalid_username_or_password=0x7f07008c;
+        public static final int error_password_match=0x7f07008b;
+        public static final int extra_active=0x7f07003e;
+        public static final int female=0x7f070040;
+        public static final int gain_weight=0x7f070043;
         public static final int gender=0x7f07001f;
+        public static final int good_job=0x7f070070;
         public static final int height=0x7f070021;
-        public static final int hello_world=0x7f070061;
         public static final int history_tab_title=0x7f07001c;
         /** 
          Content description for the hour selector in the time picker, which displays
@@ -329,19 +715,20 @@ public final class R {
     
          */
         public static final int hour_picker_description=0x7f070015;
+        public static final int ingridient_dialog_message=0x7f070064;
         public static final int item_is_selected=0x7f07000f;
         public static final int kg=0x7f070023;
         public static final int lifestyle=0x7f070034;
-        public static final int lightly_active=0x7f07003a;
-        public static final int log_off=0x7f070043;
-        public static final int login_progress_register=0x7f070072;
-        public static final int login_progress_signing_in=0x7f070071;
-        public static final int lose_weight=0x7f070040;
-        public static final int lunch=0x7f070050;
-        public static final int maintain_weight=0x7f070041;
-        public static final int male=0x7f07003e;
+        public static final int lightly_active=0x7f07003b;
+        public static final int log_off=0x7f070044;
+        public static final int login_progress_register=0x7f070088;
+        public static final int login_progress_signing_in=0x7f070087;
+        public static final int lose_weight=0x7f070041;
+        public static final int lunch=0x7f070051;
+        public static final int maintain_weight=0x7f070042;
+        public static final int male=0x7f07003f;
         public static final int manual=0x7f070030;
-        public static final int meal=0x7f07005b;
+        public static final int meal=0x7f07005c;
         /** 
          Content description for the minute selector in the time picker, which displays
          selectable five-minute intervals along the inside edge of a circle, as in an analog clock.
@@ -349,55 +736,64 @@ public final class R {
     
          */
         public static final int minute_picker_description=0x7f070016;
-        public static final int moderately_active=0x7f07003b;
-        public static final int new_food=0x7f07004d;
-        public static final int next_day=0x7f07004a;
+        public static final int moderately_active=0x7f07003c;
+        public static final int name=0x7f07005f;
+        public static final int new_food=0x7f07004e;
+        public static final int next_day=0x7f07004b;
+        public static final int no=0x7f07006c;
+        public static final int nothing_was_found=0x7f07006d;
         public static final int numbers_radius_multiplier_inner=0x7f070005;
         public static final int numbers_radius_multiplier_normal=0x7f070004;
         public static final int numbers_radius_multiplier_outer=0x7f070006;
-        public static final int pick_date=0x7f07004c;
-        public static final int previous_day=0x7f07004b;
-        public static final int profile=0x7f070044;
+        public static final int pick_date=0x7f07004d;
+        public static final int previous_day=0x7f07004c;
+        public static final int profile=0x7f070045;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f070068;
-        public static final int prompt_password=0x7f070069;
+        public static final int prompt_email=0x7f07007e;
+        public static final int prompt_password=0x7f07007f;
         public static final int radial_numbers_typeface=0x7f070017;
         public static final int recommended=0x7f070031;
-        public static final int remaining_bold=0x7f070047;
-        public static final int repeat_password=0x7f07006a;
+        public static final int remaining_bold=0x7f070048;
+        public static final int repeat_password=0x7f070080;
         public static final int sans_serif=0x7f070010;
-        public static final int save=0x7f070037;
-        public static final int search_title=0x7f070058;
-        public static final int sedantry=0x7f070039;
+        public static final int save=0x7f070038;
+        public static final int search_title=0x7f070059;
+        public static final int sedantry=0x7f07003a;
         public static final int select_day=0x7f07000d;
         public static final int select_hours=0x7f070018;
         public static final int select_minutes=0x7f070019;
         public static final int select_year=0x7f07000e;
         public static final int selection_radius_multiplier=0x7f070002;
+        public static final int serving_size=0x7f070060;
+        public static final int serving_unit=0x7f070061;
         public static final int settings=0x7f07001b;
-        public static final int snack=0x7f070052;
-        public static final int target_bold=0x7f070048;
-        public static final int test_date=0x7f070046;
-        public static final int test_number=0x7f070045;
-        public static final int test_text=0x7f07004e;
+        public static final int snack=0x7f070053;
+        public static final int target=0x7f070073;
+        public static final int target_bold=0x7f070049;
+        public static final int test_date=0x7f070047;
+        public static final int test_number=0x7f070046;
+        public static final int test_text=0x7f07004f;
         public static final int text_size_multiplier_inner=0x7f070008;
         public static final int text_size_multiplier_normal=0x7f070007;
         public static final int text_size_multiplier_outer=0x7f070009;
         public static final int time_placeholder=0x7f070012;
         public static final int time_separator=0x7f070013;
-        public static final int title_activity_food_detail=0x7f070065;
-        public static final int title_activity_login=0x7f070067;
-        public static final int title_activity_main=0x7f07005f;
-        public static final int title_activity_main_activity1=0x7f070062;
-        public static final int title_activity_main_activity2=0x7f070063;
-        public static final int title_activity_new_consumption=0x7f070064;
-        public static final int title_activity_new_food=0x7f070066;
+        public static final int title_activity_food_detail=0x7f07007b;
+        public static final int title_activity_login=0x7f07007d;
+        public static final int title_activity_main=0x7f070076;
+        public static final int title_activity_main_activity1=0x7f070078;
+        public static final int title_activity_main_activity2=0x7f070079;
+        public static final int title_activity_new_consumption=0x7f07007a;
+        public static final int title_activity_new_food=0x7f07007c;
         public static final int title_activity_profile=0x7f07001e;
-        public static final int title_activity_target_calculator=0x7f07005e;
-        public static final int very_active=0x7f07003c;
+        public static final int title_activity_target_calculator=0x7f070075;
+        public static final int too_high=0x7f070071;
+        public static final int too_low=0x7f070072;
+        public static final int very_active=0x7f07003d;
         public static final int weight=0x7f070022;
         public static final int year_picker_description=0x7f07000c;
+        public static final int yes=0x7f07006b;
     }
     public static final class style {
         /** 
@@ -444,11 +840,803 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f090001;
-        public static final int LoginFormContainer=0x7f090007;
-        public static final int MyTheme_ActionBar_TitleStyle=0x7f090006;
-        public static final int MyTheme_ActionBarStyle=0x7f090005;
+        public static final int LoginFormContainer=0x7f09000c;
+        public static final int MyTheme_ActionBar_TitleStyle=0x7f09000b;
+        public static final int MyTheme_ActionBarStyle=0x7f09000a;
+        public static final int TextAppearance_TabPageIndicator=0x7f090008;
+        public static final int Theme_PageIndicatorDefaults=0x7f090005;
+        public static final int Widget=0x7f090006;
+        public static final int Widget_IconPageIndicator=0x7f090009;
+        public static final int Widget_TabPageIndicator=0x7f090007;
         public static final int ampm_label=0x7f090003;
         public static final int day_of_week_label_condensed=0x7f090004;
         public static final int time_label=0x7f090002;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a CirclePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_android_orientation android:orientation}</code></td><td> Orientation of the indicator.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_centered com.armin.caloriemeter:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_fillColor com.armin.caloriemeter:fillColor}</code></td><td> Color of the filled circle that represents the current page.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_pageColor com.armin.caloriemeter:pageColor}</code></td><td> Color of the filled circles that represents pages.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_radius com.armin.caloriemeter:radius}</code></td><td> Radius of the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_snap com.armin.caloriemeter:snap}</code></td><td> Whether or not the selected indicator snaps to the circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeColor com.armin.caloriemeter:strokeColor}</code></td><td> Color of the open circles.</td></tr>
+           <tr><td><code>{@link #CirclePageIndicator_strokeWidth com.armin.caloriemeter:strokeWidth}</code></td><td> Width of the stroke used to draw the circles.</td></tr>
+           </table>
+           @see #CirclePageIndicator_android_background
+           @see #CirclePageIndicator_android_orientation
+           @see #CirclePageIndicator_centered
+           @see #CirclePageIndicator_fillColor
+           @see #CirclePageIndicator_pageColor
+           @see #CirclePageIndicator_radius
+           @see #CirclePageIndicator_snap
+           @see #CirclePageIndicator_strokeColor
+           @see #CirclePageIndicator_strokeWidth
+         */
+        public static final int[] CirclePageIndicator = {
+            0x010100c4, 0x010100d4, 0x7f010006, 0x7f010008,
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
+            0x7f01000e
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int CirclePageIndicator_android_background = 1;
+        /**
+          <p>
+          @attr description
+           Orientation of the indicator. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#orientation}.
+          @attr name android:orientation
+        */
+        public static final int CirclePageIndicator_android_orientation = 0;
+        /**
+          <p>
+          @attr description
+           Whether or not the indicators should be centered. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:centered
+        */
+        public static final int CirclePageIndicator_centered = 2;
+        /**
+          <p>
+          @attr description
+           Color of the filled circle that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:fillColor
+        */
+        public static final int CirclePageIndicator_fillColor = 4;
+        /**
+          <p>
+          @attr description
+           Color of the filled circles that represents pages. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:pageColor
+        */
+        public static final int CirclePageIndicator_pageColor = 5;
+        /**
+          <p>
+          @attr description
+           Radius of the circles. This is also the spacing between circles. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:radius
+        */
+        public static final int CirclePageIndicator_radius = 6;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected indicator snaps to the circles. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:snap
+        */
+        public static final int CirclePageIndicator_snap = 7;
+        /**
+          <p>
+          @attr description
+           Color of the open circles. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:strokeColor
+        */
+        public static final int CirclePageIndicator_strokeColor = 8;
+        /**
+          <p>
+          @attr description
+           Width of the stroke used to draw the circles. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:strokeWidth
+        */
+        public static final int CirclePageIndicator_strokeWidth = 3;
+        /** Attributes that can be used with a LinePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #LinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #LinePageIndicator_centered com.armin.caloriemeter:centered}</code></td><td> Whether or not the indicators should be centered.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_gapWidth com.armin.caloriemeter:gapWidth}</code></td><td> Width of the gap between each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_lineWidth com.armin.caloriemeter:lineWidth}</code></td><td> Width of each indicator line.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_selectedColor com.armin.caloriemeter:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_strokeWidth com.armin.caloriemeter:strokeWidth}</code></td><td> Width of each indicator line's stroke.</td></tr>
+           <tr><td><code>{@link #LinePageIndicator_unselectedColor com.armin.caloriemeter:unselectedColor}</code></td><td> Color of the unselected lines that represent the pages.</td></tr>
+           </table>
+           @see #LinePageIndicator_android_background
+           @see #LinePageIndicator_centered
+           @see #LinePageIndicator_gapWidth
+           @see #LinePageIndicator_lineWidth
+           @see #LinePageIndicator_selectedColor
+           @see #LinePageIndicator_strokeWidth
+           @see #LinePageIndicator_unselectedColor
+         */
+        public static final int[] LinePageIndicator = {
+            0x010100d4, 0x7f010006, 0x7f010007, 0x7f010008,
+            0x7f010009, 0x7f01000f, 0x7f010010
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int LinePageIndicator_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Whether or not the indicators should be centered. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:centered
+        */
+        public static final int LinePageIndicator_centered = 1;
+        /**
+          <p>
+          @attr description
+           Width of the gap between each indicator line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:gapWidth
+        */
+        public static final int LinePageIndicator_gapWidth = 6;
+        /**
+          <p>
+          @attr description
+           Width of each indicator line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:lineWidth
+        */
+        public static final int LinePageIndicator_lineWidth = 5;
+        /**
+          <p>
+          @attr description
+           Color of the selected line that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:selectedColor
+        */
+        public static final int LinePageIndicator_selectedColor = 2;
+        /**
+          <p>
+          @attr description
+           Width of each indicator line's stroke. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:strokeWidth
+        */
+        public static final int LinePageIndicator_strokeWidth = 3;
+        /**
+          <p>
+          @attr description
+           Color of the unselected lines that represent the pages. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:unselectedColor
+        */
+        public static final int LinePageIndicator_unselectedColor = 4;
+        /** Attributes that can be used with a TitlePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_textColor android:textColor}</code></td><td> Color of regular titles.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_android_textSize android:textSize}</code></td><td> Size of title text.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_clipPadding com.armin.caloriemeter:clipPadding}</code></td><td> Screen edge padding.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerColor com.armin.caloriemeter:footerColor}</code></td><td> Color of the footer line and indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorHeight com.armin.caloriemeter:footerIndicatorHeight}</code></td><td> Height of the indicator above the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorStyle com.armin.caloriemeter:footerIndicatorStyle}</code></td><td> Style of the indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerIndicatorUnderlinePadding com.armin.caloriemeter:footerIndicatorUnderlinePadding}</code></td><td> Left and right padding of the underline indicator.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerLineHeight com.armin.caloriemeter:footerLineHeight}</code></td><td> Height of the footer line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_footerPadding com.armin.caloriemeter:footerPadding}</code></td><td> Padding between the bottom of the title and the footer.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_linePosition com.armin.caloriemeter:linePosition}</code></td><td> Position of the line.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedBold com.armin.caloriemeter:selectedBold}</code></td><td> Whether or not the selected item is displayed as bold.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_selectedColor com.armin.caloriemeter:selectedColor}</code></td><td> Color of the selected title.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_titlePadding com.armin.caloriemeter:titlePadding}</code></td><td> Padding between titles when bumping into each other.</td></tr>
+           <tr><td><code>{@link #TitlePageIndicator_topPadding com.armin.caloriemeter:topPadding}</code></td><td> Padding between titles and the top of the View.</td></tr>
+           </table>
+           @see #TitlePageIndicator_android_background
+           @see #TitlePageIndicator_android_textColor
+           @see #TitlePageIndicator_android_textSize
+           @see #TitlePageIndicator_clipPadding
+           @see #TitlePageIndicator_footerColor
+           @see #TitlePageIndicator_footerIndicatorHeight
+           @see #TitlePageIndicator_footerIndicatorStyle
+           @see #TitlePageIndicator_footerIndicatorUnderlinePadding
+           @see #TitlePageIndicator_footerLineHeight
+           @see #TitlePageIndicator_footerPadding
+           @see #TitlePageIndicator_linePosition
+           @see #TitlePageIndicator_selectedBold
+           @see #TitlePageIndicator_selectedColor
+           @see #TitlePageIndicator_titlePadding
+           @see #TitlePageIndicator_topPadding
+         */
+        public static final int[] TitlePageIndicator = {
+            0x01010095, 0x01010098, 0x010100d4, 0x7f010007,
+            0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014,
+            0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018,
+            0x7f010019, 0x7f01001a, 0x7f01001b
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int TitlePageIndicator_android_background = 2;
+        /**
+          <p>
+          @attr description
+           Color of regular titles. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#textColor}.
+          @attr name android:textColor
+        */
+        public static final int TitlePageIndicator_android_textColor = 1;
+        /**
+          <p>
+          @attr description
+           Size of title text. 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#textSize}.
+          @attr name android:textSize
+        */
+        public static final int TitlePageIndicator_android_textSize = 0;
+        /**
+          <p>
+          @attr description
+           Screen edge padding. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:clipPadding
+        */
+        public static final int TitlePageIndicator_clipPadding = 4;
+        /**
+          <p>
+          @attr description
+           Color of the footer line and indicator. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerColor
+        */
+        public static final int TitlePageIndicator_footerColor = 5;
+        /**
+          <p>
+          @attr description
+           Height of the indicator above the footer line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerIndicatorHeight
+        */
+        public static final int TitlePageIndicator_footerIndicatorHeight = 8;
+        /**
+          <p>
+          @attr description
+           Style of the indicator. Default is triangle. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>triangle</code></td><td>1</td><td></td></tr>
+<tr><td><code>underline</code></td><td>2</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerIndicatorStyle
+        */
+        public static final int TitlePageIndicator_footerIndicatorStyle = 7;
+        /**
+          <p>
+          @attr description
+           Left and right padding of the underline indicator. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerIndicatorUnderlinePadding
+        */
+        public static final int TitlePageIndicator_footerIndicatorUnderlinePadding = 9;
+        /**
+          <p>
+          @attr description
+           Height of the footer line. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerLineHeight
+        */
+        public static final int TitlePageIndicator_footerLineHeight = 6;
+        /**
+          <p>
+          @attr description
+           Padding between the bottom of the title and the footer. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:footerPadding
+        */
+        public static final int TitlePageIndicator_footerPadding = 10;
+        /**
+          <p>
+          @attr description
+           Position of the line. 
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>bottom</code></td><td>0</td><td></td></tr>
+<tr><td><code>top</code></td><td>1</td><td></td></tr>
+</table>
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:linePosition
+        */
+        public static final int TitlePageIndicator_linePosition = 11;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected item is displayed as bold. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:selectedBold
+        */
+        public static final int TitlePageIndicator_selectedBold = 12;
+        /**
+          <p>
+          @attr description
+           Color of the selected title. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:selectedColor
+        */
+        public static final int TitlePageIndicator_selectedColor = 3;
+        /**
+          <p>
+          @attr description
+           Padding between titles when bumping into each other. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:titlePadding
+        */
+        public static final int TitlePageIndicator_titlePadding = 13;
+        /**
+          <p>
+          @attr description
+           Padding between titles and the top of the View. 
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:topPadding
+        */
+        public static final int TitlePageIndicator_topPadding = 14;
+        /** Attributes that can be used with a UnderlinePageIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_android_background android:background}</code></td><td> View background </td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeDelay com.armin.caloriemeter:fadeDelay}</code></td><td> Length of the delay to fade the indicator.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fadeLength com.armin.caloriemeter:fadeLength}</code></td><td> Length of the indicator fade to transparent.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_fades com.armin.caloriemeter:fades}</code></td><td> Whether or not the selected indicator fades.</td></tr>
+           <tr><td><code>{@link #UnderlinePageIndicator_selectedColor com.armin.caloriemeter:selectedColor}</code></td><td> Color of the selected line that represents the current page.</td></tr>
+           </table>
+           @see #UnderlinePageIndicator_android_background
+           @see #UnderlinePageIndicator_fadeDelay
+           @see #UnderlinePageIndicator_fadeLength
+           @see #UnderlinePageIndicator_fades
+           @see #UnderlinePageIndicator_selectedColor
+         */
+        public static final int[] UnderlinePageIndicator = {
+            0x010100d4, 0x7f010007, 0x7f01001c, 0x7f01001d,
+            0x7f01001e
+        };
+        /**
+          <p>
+          @attr description
+           View background 
+          <p>This corresponds to the global attribute
+          resource symbol {@link android.R.attr#background}.
+          @attr name android:background
+        */
+        public static final int UnderlinePageIndicator_android_background = 0;
+        /**
+          <p>
+          @attr description
+           Length of the delay to fade the indicator. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:fadeDelay
+        */
+        public static final int UnderlinePageIndicator_fadeDelay = 3;
+        /**
+          <p>
+          @attr description
+           Length of the indicator fade to transparent. 
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:fadeLength
+        */
+        public static final int UnderlinePageIndicator_fadeLength = 4;
+        /**
+          <p>
+          @attr description
+           Whether or not the selected indicator fades. 
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:fades
+        */
+        public static final int UnderlinePageIndicator_fades = 2;
+        /**
+          <p>
+          @attr description
+           Color of the selected line that represents the current page. 
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:selectedColor
+        */
+        public static final int UnderlinePageIndicator_selectedColor = 1;
+        /** Attributes that can be used with a ViewPagerIndicator.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiCirclePageIndicatorStyle com.armin.caloriemeter:vpiCirclePageIndicatorStyle}</code></td><td> Style of the circle indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiIconPageIndicatorStyle com.armin.caloriemeter:vpiIconPageIndicatorStyle}</code></td><td> Style of the icon indicator's views.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiLinePageIndicatorStyle com.armin.caloriemeter:vpiLinePageIndicatorStyle}</code></td><td> Style of the line indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTabPageIndicatorStyle com.armin.caloriemeter:vpiTabPageIndicatorStyle}</code></td><td> Style of the tab indicator's tabs.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiTitlePageIndicatorStyle com.armin.caloriemeter:vpiTitlePageIndicatorStyle}</code></td><td> Style of the title indicator.</td></tr>
+           <tr><td><code>{@link #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle com.armin.caloriemeter:vpiUnderlinePageIndicatorStyle}</code></td><td> Style of the underline indicator.</td></tr>
+           </table>
+           @see #ViewPagerIndicator_vpiCirclePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiIconPageIndicatorStyle
+           @see #ViewPagerIndicator_vpiLinePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiTabPageIndicatorStyle
+           @see #ViewPagerIndicator_vpiTitlePageIndicatorStyle
+           @see #ViewPagerIndicator_vpiUnderlinePageIndicatorStyle
+         */
+        public static final int[] ViewPagerIndicator = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005
+        };
+        /**
+          <p>
+          @attr description
+           Style of the circle indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiCirclePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
+        /**
+          <p>
+          @attr description
+           Style of the icon indicator's views. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiIconPageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
+        /**
+          <p>
+          @attr description
+           Style of the line indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiLinePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
+        /**
+          <p>
+          @attr description
+           Style of the tab indicator's tabs. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiTabPageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
+        /**
+          <p>
+          @attr description
+           Style of the title indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiTitlePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
+        /**
+          <p>
+          @attr description
+           Style of the underline indicator. 
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          <p>This is a private symbol.
+          @attr name com.armin.caloriemeter:vpiUnderlinePageIndicatorStyle
+        */
+        public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
+    };
 }

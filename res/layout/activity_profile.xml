@@ -11,76 +11,98 @@
 
     <LinearLayout 
         android:orientation="horizontal"
+        android:layout_marginTop="@dimen/list_item_inside_margin"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
+
+        <Spinner
+            android:id="@+id/gender_spinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:entries="@array/gender_list" />
+
         <TextView
 	        android:id="@+id/gender_label"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
+	        android:layout_marginLeft="@dimen/activity_horizontal_margin"
 	        android:gravity="center_vertical"
-	        android:text="@string/gender" />
-    
-        <Spinner
-	        android:id="@+id/gender_spinner"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_marginLeft="15dp"
-	        android:entries="@array/gender_list" />    
+	        android:text="@string/gender" />    
 	</LinearLayout>
     
     <LinearLayout 
         android:orientation="horizontal"
+        android:layout_marginTop="@dimen/list_item_inside_margin"
         android:layout_height="wrap_content"
         android:layout_width="match_parent">
-    
-	    <TextView
-	        android:id="@+id/date_of_birth_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:gravity="center_vertical"
-	        android:text="@string/date_of_birth" />
-	
-	    <EditText
-	        android:id="@+id/date_of_birth_edit_text"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	        android:ems="10"
-	        android:inputType="date" >
-	    </EditText>
+
+        <EditText
+            android:id="@+id/date_of_birth_edit_text"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/date_of_birth_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/date_of_birth" />
 	</LinearLayout>
 	
     <LinearLayout 
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/list_item_inside_margin"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cm_label"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/cm" />
+
+        <EditText
+            android:id="@+id/height_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="number" />
+
 	    <TextView
 	        android:id="@+id/height_label"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:gravity="center_vertical"
 	        android:text="@string/height" />
-	
-	    <EditText
-	        android:id="@+id/height_edit_text"
-	        android:layout_width="0dp"
-	        android:layout_weight="1"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"
-	        android:ems="10"
-	        android:inputType="number" />
-	    
-	    <TextView
-	        android:id="@+id/cm_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:gravity="center_vertical"
-	        android:text="@string/cm" />
 	</LinearLayout>
 	<LinearLayout 
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/list_item_inside_margin"
         android:layout_height="wrap_content">
+
+		<TextView
+		    android:id="@+id/kg_label"
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:gravity="center_vertical"
+		    android:text="@string/kg" />
+
+		<EditText
+		    android:id="@+id/weight_edit_text"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:ems="10"
+		    android:gravity="center"
+		    android:inputType="number" />
 	
 	    <TextView
 	        android:id="@+id/weight_label"
@@ -88,36 +110,31 @@
 	        android:layout_height="match_parent"
 	        android:gravity="center_vertical"
 	        android:text="@string/weight" />
-	
-	    <EditText
-	        android:id="@+id/weight_edit_text"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:gravity="center"
-	        android:ems="10"
-	        android:inputType="number" />
-	    
-	    <TextView
-	        android:id="@+id/kg_label"
-	        android:layout_width="wrap_content"
-	        android:layout_height="match_parent"
-	        android:gravity="center_vertical"
-	        android:text="@string/kg" />
 
 	</LinearLayout>
 
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
-	    android:layout_marginTop="5dp" >
+	    android:layout_marginTop="@dimen/list_item_inside_margin" >
 
 		<TextView
-		    android:id="@+id/calorie_target_label"
+		    android:id="@+id/calorie_label_profile"
 		    android:layout_width="wrap_content"
 		    android:layout_height="match_parent"
 		    android:gravity="center_vertical"
-		    android:text="@string/daily_target" />
+		    android:text="@string/cal" />
+
+		<ImageButton
+		    android:id="@+id/calorie_target_edit_button"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="5dp"
+		    android:layout_marginRight="5dp"
+		    android:background="@null"
+		    android:contentDescription="@string/edit"
+		    android:gravity="center_vertical"
+		    android:src="@drawable/ic_action_edit" />
 
 		<TextView
 		    android:id="@+id/calorie_goal_text_view_profile"
@@ -127,23 +144,12 @@
 		    android:gravity="center"
 		    android:textAppearance="?android:attr/textAppearanceLarge" />
 
-		<ImageButton
-		    android:id="@+id/calorie_target_edit_button"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:gravity="center_vertical"
-		    android:contentDescription="@string/edit"
-		    android:background="@null"
-		    android:layout_marginLeft="5dp"
-		    android:layout_marginRight="5dp"
-		    android:src="@drawable/ic_action_edit" />
-
 		<TextView
-		    android:id="@+id/calorie_label_profile"
+		    android:id="@+id/calorie_target_label"
 		    android:layout_width="wrap_content"
 		    android:layout_height="match_parent"
 		    android:gravity="center_vertical"
-		    android:text="@string/cal" />
+		    android:text="@string/daily_target" />
 	    
 	</LinearLayout>
 

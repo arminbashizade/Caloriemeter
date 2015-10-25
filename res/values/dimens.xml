@@ -6,6 +6,7 @@
     <dimen name="number_unit_margin">2dp</dimen>
     <dimen name="divider_height">1dp</dimen>
     <dimen name="list_item_inside_margin">5dp</dimen>
+    <dimen name="text_view_bottom_margin">12dp</dimen>
     <dimen name="divider_margin">10dp</dimen>
     <dimen name="bottom_margin_little">5dp</dimen>
 

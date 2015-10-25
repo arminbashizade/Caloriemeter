@@ -3,14 +3,15 @@ package com.armin.caloriemeter.activities;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import com.armin.caloriemeter.Constants;
-import com.armin.caloriemeter.Date;
-import com.armin.caloriemeter.MealConsumption;
 import com.armin.caloriemeter.R;
-import com.armin.caloriemeter.Time;
 import com.armin.caloriemeter.db.ConsumptionContract.ConsumptionEntry;
 import com.armin.caloriemeter.db.ConsumptionContract.DailyConsumptionEntry;
 import com.armin.caloriemeter.db.ConsumptionDatabaseHelper;
+import com.armin.caloriemeter.util.Constants;
+import com.armin.caloriemeter.util.Date;
+import com.armin.caloriemeter.util.MealConsumption;
+import com.armin.caloriemeter.util.Time;
+import com.armin.caloriemeter.util.Utils;
 import com.fourmob.datetimepicker.date.PersianCalendar;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog.OnDateSetListener;
@@ -24,7 +25,6 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -57,13 +57,12 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 	private TextView amPmTextView;
 
 	private PersianCalendar calendar = new PersianCalendar();
-	private Calendar cal = Calendar.getInstance();
+//	private Calendar cal = Calendar.getInstance();
 
-	//TODO change to recieved date
 	PersianDatePickerDialog persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
-	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
+//	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
 
-	PersianTimePickerDialog timePickerDialog = PersianTimePickerDialog.newInstance(this, cal.get(Calendar.HOUR_OF_DAY) ,cal.get(Calendar.MINUTE), false, false, PersianTimePickerDialog.ENGLISH);
+//	PersianTimePickerDialog timePickerDialog = PersianTimePickerDialog.newInstance(this, cal.get(Calendar.HOUR_OF_DAY) ,cal.get(Calendar.MINUTE), false, false, PersianTimePickerDialog.ENGLISH);
 	PersianTimePickerDialog persianTimePickerDialog = PersianTimePickerDialog.newInstance(this, calendar.get(PersianCalendar.HOUR_OF_DAY) ,calendar.get(PersianCalendar.MINUTE), false, false, PersianTimePickerDialog.PERSIAN);
 	
 	private String foodName = null;
@@ -89,7 +88,7 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 		    unit = extras.getStringArray(Constants.UNIT_KEY);
 		    energy = extras.getFloatArray(Constants.ENERGY_KEY);
 		    date = (Date)extras.getSerializable(Constants.DATE_KEY);
-		    time = (Time)extras.getSerializable(Constants.TIME_KEY);		    
+		    time = (Time)extras.getSerializable(Constants.TIME_KEY);
 		}
 
 		mealConsumption.setName(foodName);
@@ -105,7 +104,7 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 		timeTextView = (TextView) findViewById(R.id.time_text_view);
 		amPmTextView = (TextView) findViewById(R.id.am_pm_text_view);
 
-		energyTextView.setText("0");
+		energyTextView.setText(Utils.toPersianNumbers("0"));
 		amountEditText.addTextChangedListener(this);
 		unitSpinner.setOnItemSelectedListener(this);
 		
@@ -117,40 +116,48 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 		timeTextView.setOnClickListener(this);
 		amPmTextView.setOnClickListener(this);
 		
-		Log.i("daterecievedindetail", date.getSTDString());
-		cal.set(Calendar.DATE, date.day);
-		cal.set(Calendar.MONTH, date.month);
-		cal.set(Calendar.YEAR, date.year);
-		cal.set(Calendar.HOUR_OF_DAY, time.hour);
-		cal.set(Calendar.MINUTE, time.minute);
+		calendar.set(Calendar.DATE, date.day);
+		calendar.set(Calendar.MONTH, date.month-1);
+		calendar.set(Calendar.YEAR, date.year);
+		calendar.set(Calendar.HOUR_OF_DAY, time.hour);
+		calendar.set(Calendar.MINUTE, time.minute);
 
 		setDateAndTime(date.year, date.month, date.day, time.hour, time.minute);
+		
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(
+			    this, R.layout.spinner_rtl_item, getResources().getStringArray(R.array.meal_items));
+
+		((Spinner) findViewById(R.id.meal_spinner)).setAdapter(adapter1);
+
 		
 		ArrayList<String> spinnerArray =  new ArrayList<String>();
 		for(String s: unit)
 			spinnerArray.add(s);
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-		    this, android.R.layout.simple_spinner_item, spinnerArray);
+		    this, R.layout.spinner_rtl_item, spinnerArray);
 
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		adapter.setDropDownViewResource(R.layout.spinner_rtl_item);
 		unitSpinner.setAdapter(adapter);
 		unitSpinner.setSelection(0);
 	}
 
+	// zero-based month as input
 	private void setDateAndTime(int year, int month, int day, int hourOfDay, int minute)
 	{
 		if(year != -1)
 			mealConsumption.setDate(new Date(year, month, day));
 		if(hourOfDay != -1)
 			mealConsumption.setTime(new Time(hourOfDay, minute));
-		//TODO use names instead of numbers
-		weekdayTextView.setText(cal.get(Calendar.DAY_OF_WEEK)+"");
-		monthDayTextView.setText(cal.get(Calendar.DAY_OF_MONTH)+"");
-		yearMonthTextView.setText(cal.get(Calendar.MONTH)+1+" "+cal.get(Calendar.YEAR));
+		weekdayTextView.setText(PersianCalendar.weekdayFullNames[calendar.get(Calendar.DAY_OF_WEEK)]+"");
+		monthDayTextView.setText(Utils.toPersianNumbers(calendar.get(Calendar.DAY_OF_MONTH)+"")+"");
+		yearMonthTextView.setText(PersianCalendar.months[calendar.get(Calendar.MONTH)]+" "+Utils.toPersianNumbers(calendar.get(Calendar.YEAR)+""));
 		
-		timeTextView.setText(String.format("%d:%02d", cal.get(Calendar.HOUR), cal.get(Calendar.MINUTE)));
-		amPmTextView.setText(cal.get(Calendar.AM_PM)+"");
+		int hour = calendar.get(Calendar.HOUR);
+		if(hour == 0)
+			hour = 12;
+		timeTextView.setText(Utils.toPersianNumbers(String.format("%d:%02d", hour, calendar.get(Calendar.MINUTE)))+"");
+		amPmTextView.setText(calendar.get(Calendar.AM_PM)==Calendar.AM?"ق‌‌ظ":"ب‌ظ");
 	}
 
 	/**
@@ -188,7 +195,8 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 				amountEditText.requestFocus();
 				return true;
 			}
-			mealConsumption.setAmount(Integer.parseInt(amountEditText.getText().toString()));
+			
+			mealConsumption.setAmount(Integer.parseInt(Utils.toEnglishNumbers(amountEditText.getText().toString())));
 			mealConsumption.setUnit(unit[unitSpinner.getSelectedItemPosition()]);
 			SQLiteDatabase db = mDbHelper.getWritableDatabase();
 			
@@ -242,10 +250,13 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 						selection,
 						selectionArgs);
 			}
+			db.close();
 		}
 		finish();
 		Intent intent = new Intent(getBaseContext(), HistoryActivity.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		intent.putExtra(Constants.DATE_KEY, mealConsumption.getDate());
+		intent.putExtra(Constants.TIME_KEY, (Time)getIntent().getExtras().getSerializable(Constants.TIME_KEY));
 		startActivity(intent);
 		return super.onOptionsItemSelected(item);
 	}
@@ -267,7 +278,7 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 		int unitIndex = unitSpinner.getSelectedItemPosition();
 		float enteredAmount = Float.parseFloat(s.toString());
 		mealConsumption.setEnergy((int) (enteredAmount * energy[unitIndex] / amount[unitIndex]));
-		energyTextView.setText(mealConsumption.getEnergy()+"");
+		energyTextView.setText(Utils.toPersianNumbers(mealConsumption.getEnergy()+"")+"");
 	}
 
 	@Override
@@ -275,11 +286,11 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 	{
 		if(parent.getId() == R.id.unit_spinner)
 		{
-			if("".equals(amountEditText.getText().toString()))
+			if(TextUtils.isEmpty(amountEditText.getText()))
 				return;
-			int enteredAmount = Integer.parseInt(amountEditText.getText().toString());
+			int enteredAmount = Integer.parseInt(Utils.toEnglishNumbers(amountEditText.getText().toString()));
 			mealConsumption.setEnergy((int) (enteredAmount * energy[position] / amount[position]));
-			energyTextView.setText(mealConsumption.getEnergy()+"");
+			energyTextView.setText(Utils.toPersianNumbers(mealConsumption.getEnergy()+"")+"");
 		}
 		
 		if(parent.getId() == R.id.meal_spinner)
@@ -299,18 +310,18 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 		case R.id.weekday_text_view:
 		case R.id.month_day_text_view:
 		case R.id.year_month_text_view:
-			datePickerDialog.setYearRange(2000, cal.get(Calendar.YEAR));
-			datePickerDialog.setVibrate(false);
-			datePickerDialog.setCloseOnSingleTapDay(false);
-			datePickerDialog.show(getSupportFragmentManager(), "datepicker_food_detail");			
+			persianDatePickerDialog.setYearRange(Constants.FIRST_YEAR_FOOD, calendar.get(Calendar.YEAR));
+			persianDatePickerDialog.setVibrate(false);
+			persianDatePickerDialog.setCloseOnSingleTapDay(false);
+			persianDatePickerDialog.show(getSupportFragmentManager(), "datepicker_food_detail");			
 			return;
 
 		case R.id.time_text_view:
 		case R.id.am_pm_text_view:
-			timePickerDialog.setInitialTime(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
-			timePickerDialog.setVibrate(false);
-			timePickerDialog.setCloseOnSingleTapMinute(false);
-			timePickerDialog.show(getSupportFragmentManager(), "timepicker");
+			persianTimePickerDialog.setInitialTime(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+			persianTimePickerDialog.setVibrate(false);
+			persianTimePickerDialog.setCloseOnSingleTapMinute(false);
+			persianTimePickerDialog.show(getSupportFragmentManager(), "timepicker");
 		}
 	}
 
@@ -318,18 +329,18 @@ implements TextWatcher, OnItemSelectedListener, OnClickListener, OnDateSetListen
 	public void onDateSet(PersianDatePickerDialog datePickerDialog, int year,
 			int month, int day)
 	{
-		cal.set(Calendar.DATE, day);
-		cal.set(Calendar.MONTH, month);
-		cal.set(Calendar.YEAR, year);
+		calendar.set(Calendar.DATE, day);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.YEAR, year);
 		
-		setDateAndTime(year, month+1, day, -1, -1);
+		setDateAndTime(year, month, day, -1, -1);
 	}
 
 	@Override
 	public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute)
 	{
-		cal.set(Calendar.HOUR_OF_DAY, hourOfDay);
-		cal.set(Calendar.MINUTE, minute);
+		calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+		calendar.set(Calendar.MINUTE, minute);
 		
 		setDateAndTime(-1, -1, -1, hourOfDay, minute);
 	}

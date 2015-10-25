@@ -3,23 +3,22 @@
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="repeat_password">Reapeat Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_in_link_underlined"><u>Sign in</u></string>
-    <string name="action_sign_up_link_underlined"><u>Sign up</u></string>
-    <string name="action_forgot_password_underlined"><u>forgot password?</u></string>
-    <string name="action_register">Register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="login_progress_signing_in">Signing in&#8230;</string>
-    <string name="login_progress_register">Registering&#8230;</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_password_match">Passwords do not match</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_invalid_username_or_password">Invalid username and/or password.</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="error_email_exists">This email exists.</string>
+    <string name="prompt_email">ایمیل</string>
+    <string name="prompt_password">کلمه‌ی عبور</string>
+    <string name="repeat_password">تکرار کلمه‌ی عبور</string>
+    <string name="action_sign_in">ورود</string>
+    <string name="action_sign_in_link_underlined"><u>ورود</u></string>
+    <string name="action_sign_up_link_underlined"><u>ثبت نام</u></string>
+    <string name="action_forgot_password_underlined"><u>کلمه‌ی عبور را فراموش کرده‌اید؟</u></string>
+    <string name="action_register">ثبت نام</string>
+    <string name="action_sign_in_short">ورود</string>
+    <string name="login_progress_signing_in">در حال ورود&#8230;</string>
+    <string name="login_progress_register">در حال ثبت نام&#8230;</string>
+    <string name="error_invalid_email">ایمیل درست وارد نشده است</string>
+    <string name="error_invalid_password">کلمه‌ی عبور کوتاه است</string>
+    <string name="error_password_match">تکرار کلمه‌ی عبور درست نیست</string>
+    <string name="error_invalid_username_or_password">ایمیل یا کلمه‌ی عبور اشتباه است</string>
+    <string name="error_field_required">لطفا مقداری وارد کنید</string>
+    <string name="error_email_exists">این ایمیل قبلا ثبت نام شده</string>
 
 </resources>

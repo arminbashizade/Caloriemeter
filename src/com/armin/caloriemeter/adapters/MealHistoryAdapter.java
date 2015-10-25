@@ -2,9 +2,10 @@ package com.armin.caloriemeter.adapters;
 
 import java.util.ArrayList;
 
-import com.armin.caloriemeter.Meal;
-import com.armin.caloriemeter.MealConsumption;
 import com.armin.caloriemeter.R;
+import com.armin.caloriemeter.util.Meal;
+import com.armin.caloriemeter.util.MealConsumption;
+import com.armin.caloriemeter.util.Utils;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -47,9 +48,9 @@ public class MealHistoryAdapter extends ArrayAdapter<MealConsumption> {
        ((TextView)convertView.findViewById(R.id.consumption_food_name))
        		.setText(meals.get(position).getName());
        ((TextView)convertView.findViewById(R.id.consumption_energy))
-       		.setText(meals.get(position).getEnergy()+"");
+       		.setText(Utils.toPersianNumbers(""+meals.get(position).getEnergy())+"");
        ((TextView)convertView.findViewById(R.id.consumption_amount))
-       		.setText(meals.get(position).getAmount()+"");
+       		.setText(Utils.toPersianNumbers(""+meals.get(position).getAmount())+"");
        ((TextView)convertView.findViewById(R.id.consumption_unit))
        		.setText(meals.get(position).getUnit());
        ((TextView)convertView.findViewById(R.id.consumption_meal))

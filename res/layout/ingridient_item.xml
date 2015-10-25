@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <TextView
+        android:id="@+id/ingridient_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/number_unit_margin"
+        android:layout_marginRight="@dimen/number_unit_margin"
+        android:gravity="center_vertical"
+        android:text="@string/kg" />
+
+    <TextView
+        android:id="@+id/ingridient_amount"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:text="@string/test_number" />
+
+    <TextView
+        android:id="@+id/ingridient_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical"
+        android:text="@string/test_text"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/delete_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/delete" />
+
+</LinearLayout>

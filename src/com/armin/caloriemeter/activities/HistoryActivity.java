@@ -1,5 +1,6 @@
 package com.armin.caloriemeter.activities;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -10,6 +11,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -21,17 +23,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
-import com.armin.caloriemeter.Constants;
-import com.armin.caloriemeter.Date;
 import com.armin.caloriemeter.R;
-import com.armin.caloriemeter.Time;
 import com.armin.caloriemeter.adapters.NavigationAdapter;
+import com.armin.caloriemeter.dialogs.DeleteConsumptionDialog.DeleteDialogListener;
+import com.armin.caloriemeter.util.Constants;
+import com.armin.caloriemeter.util.Date;
+import com.armin.caloriemeter.util.MealConsumption;
+import com.armin.caloriemeter.util.Time;
 import com.fourmob.datetimepicker.date.PersianCalendar;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog.OnDateSetListener;
 
-public class HistoryActivity extends FragmentActivity implements ActionBar.TabListener, OnDateSetListener  {
-//TODO go to the date which you left
+public class HistoryActivity extends FragmentActivity implements ActionBar.TabListener, OnDateSetListener, DeleteDialogListener  {
 	/**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -45,6 +48,8 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
     /**
      * The {@link ViewPager} that will host the section contents.
      */
+    
+    //TODO navigate between days? :-?
     ViewPager mViewPager;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -54,10 +59,10 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
     private String[] navigationMenuItems;
     
     private PersianCalendar calendar = new PersianCalendar();
-    private Calendar cal= Calendar.getInstance();
+//    private Calendar cal= Calendar.getInstance();
     
-    PersianDatePickerDialog persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
-	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
+    private PersianDatePickerDialog persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
+//	private PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
 
     private HistoryFragment historyFragment = null;
     
@@ -68,7 +73,20 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
+        
+        Bundle extras = getIntent().getExtras();
+        if(extras != null)
+        {
+        	Date date = (Date) extras.getSerializable(Constants.DATE_KEY);
+        	calendar.set(Calendar.YEAR, date.year);
+        	calendar.set(Calendar.MONTH, date.month-1);
+        	calendar.set(Calendar.DAY_OF_MONTH, date.day);
+        	Time time = (Time) extras.getSerializable(Constants.TIME_KEY);
+        	calendar.set(Calendar.HOUR_OF_DAY, time.hour);
+        	calendar.set(Calendar.MINUTE, time.minute);
+        }
 
+        persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
         actionBar.setStackedBackgroundDrawable(new ColorDrawable(R.color.tab_bar_color));
         
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -163,10 +181,11 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
 
         if(item.getItemId() == R.id.action_new_food)
         {
-        	Intent intent = new Intent(HistoryActivity.this, NewConsumptionActivity.class);
+        	Intent intent = new Intent(HistoryActivity.this, SearchActivity.class);
         	
-        	Date date = new Date(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DAY_OF_MONTH));
-        	Time time = new Time(cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE));
+        	Date date = new Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DAY_OF_MONTH));
+        	Time time = new Time(calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE));
+        	intent.putExtra(Constants.SEARCH_MODE_KEY, Constants.FOOD);
         	intent.putExtra(Constants.DATE_KEY, date);
         	intent.putExtra(Constants.TIME_KEY, time);
         	
@@ -174,21 +193,25 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
         }
         else if(item.getItemId() == R.id.action_pick_date)
         {
-        	datePickerDialog.setYearRange(1950, cal.get(Calendar.YEAR));
-			datePickerDialog.setVibrate(false);
-			datePickerDialog.setCloseOnSingleTapDay(false);
-			datePickerDialog.show(getSupportFragmentManager(), "date");
+        	persianDatePickerDialog.setYearRange(Constants.FIRST_YEAR_FOOD, calendar.get(Calendar.YEAR));
+			persianDatePickerDialog.setVibrate(false);
+			persianDatePickerDialog.setCloseOnSingleTapDay(false);
+			persianDatePickerDialog.show(getSupportFragmentManager(), "date_picker");
         }
         else if(item.getItemId() == R.id.action_previous_day)
         {
-        	cal.add(Calendar.DATE, -1);
-        	historyFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
+        	calendar.add(Calendar.DATE, -1);
+        	historyFragment.update(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DATE));
         	return true;
         }
         else if(item.getItemId() == R.id.action_next_day)
         {
-        	cal.add(Calendar.DATE, +1);
-        	historyFragment.update(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE));
+        	Calendar tmpCal = Calendar.getInstance();
+        	if(calendar.getTimeInMillis() + 24*60*60*1000 <= tmpCal.getTimeInMillis())
+        	{
+        		calendar.add(Calendar.DATE, +1);
+        		historyFragment.update(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DATE));
+        	}
         	return true;
         }
         
@@ -236,6 +259,7 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
             case 0:
             	if(historyFragment== null)
             		historyFragment = new HistoryFragment();
+            	historyFragment.setDate(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
             	return historyFragment;
             case 1:
             }
@@ -265,9 +289,18 @@ public class HistoryActivity extends FragmentActivity implements ActionBar.TabLi
 	public void onDateSet(PersianDatePickerDialog datePickerDialog, int year,
 			int month, int day)
 	{
-		cal.set(Calendar.YEAR, year);
-		cal.set(Calendar.MONTH, month);
-		cal.set(Calendar.DATE, day);
-		historyFragment.update(year, month, day);
+		calendar.set(Calendar.YEAR, year);
+		calendar.set(Calendar.MONTH, month);
+		calendar.set(Calendar.DATE, day);
+		historyFragment.update(year, month+1, day);
+	}
+	
+	@Override
+	public void onDialogPositiveClick(DialogFragment dialog, int position, ArrayList<MealConsumption> mealsArray) {
+		historyFragment.new DeleteConsumptionQuery().execute(mealsArray.remove(position));
+	}
+
+	@Override
+	public void onDialogNegativeClick(DialogFragment dialog) {
 	}
 }

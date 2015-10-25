@@ -1,6 +1,6 @@
 package com.armin.caloriemeter.db;
 
-import com.armin.caloriemeter.Constants;
+import com.armin.caloriemeter.util.Constants;
 
 import android.provider.BaseColumns;
 
@@ -67,8 +67,7 @@ public final class ConsumptionContract
 	
 	public static final String SQL_CREATE_DAILY_CONSUMPTION =
 			"CREATE TABLE IF NOT EXISTS " + DailyConsumptionEntry.TABLE_NAME + " (\n" +
-					DailyConsumptionEntry._ID + " INTEGER PRIMARY KEY,\n" +
-					DailyConsumptionEntry.COLUMN_NAME_DATE + DATE_TYPE + ",\n" +
+					DailyConsumptionEntry.COLUMN_NAME_DATE + DATE_TYPE + " PRIMARY KEY,\n" +
 					DailyConsumptionEntry.COLUMN_NAME_CONSUMED + INTEGER_TYPE + ",\n" +
 					DailyConsumptionEntry.COLUMN_NAME_TARGET+ TEXT_TYPE +
 					" )";

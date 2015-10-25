@@ -8,34 +8,37 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.armin.caloriemeter.activities.HistoryActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
                 android:value="splitActionBarWhenNarrow" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.armin.caloriemeter.activities.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:noHistory="true"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
         <activity
             android:name="com.armin.caloriemeter.activities.ProfileActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_profile"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
@@ -43,8 +46,10 @@
         </activity>
         <activity
             android:name="com.armin.caloriemeter.activities.TargetCalculatorActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_target_calculator"
             android:parentActivityName="com.armin.caloriemeter.activities.ProfileActivity"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
@@ -55,11 +60,20 @@
         </activity>
         <activity
             android:name="com.armin.caloriemeter.activities.MainActivity"
-            android:label="@string/title_activity_main" >
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:name="com.armin.caloriemeter.activities.SearchActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_new_consumption"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
@@ -67,8 +81,10 @@
         </activity>
         <activity
             android:name="com.armin.caloriemeter.activities.FoodDetailActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_food_detail"
-            android:parentActivityName="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:parentActivityName="com.armin.caloriemeter.activities.SearchActivity"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
@@ -78,18 +94,27 @@
                 android:value="com.armin.caloriemeter.activities.NewConsumptionActivity" />
         </activity>
         <activity
-            android:name="com.armin.caloriemeter.NewFoodActivity"
+            android:name="com.armin.caloriemeter.activities.NewFoodActivity"
+            android:configChanges="orientation|keyboardHidden"
             android:label="@string/title_activity_new_food"
-            android:parentActivityName="com.armin.caloriemeter.activities.NewConsumptionActivity"
+            android:parentActivityName="com.armin.caloriemeter.activities.SearchActivity"
+            android:screenOrientation="portrait"
             android:uiOptions="splitActionBarWhenNarrow" >
             <meta-data
                 android:name="android.support.UI_OPTIONS"
                 android:value="splitActionBarWhenNarrow" />
-            
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.armin.caloriemeter.activities.NewConsumptionActivity" />
         </activity>
-    </application>
 
+        <service
+            android:name="com.armin.caloriemeter.notification.NotificationService"
+            android:enabled="true" />
+
+        <receiver 
+            android:name="com.armin.caloriemeter.notification.NotificationReceiver" >
+             <action android:name="com.armin.caloriemeter.ACTION" />	
+        </receiver>
+    </application>
 </manifest>

@@ -2,12 +2,13 @@ package com.armin.caloriemeter.activities;
 
 import java.util.Calendar;
 
-import com.armin.caloriemeter.Constants;
-import com.armin.caloriemeter.Date;
 import com.armin.caloriemeter.R;
-import com.armin.caloriemeter.User;
 import com.armin.caloriemeter.db.ConsumptionDatabaseHelper;
 import com.armin.caloriemeter.db.ConsumptionContract.DailyConsumptionEntry;
+import com.armin.caloriemeter.util.Constants;
+import com.armin.caloriemeter.util.Date;
+import com.armin.caloriemeter.util.User;
+import com.armin.caloriemeter.util.Utils;
 import com.fourmob.datetimepicker.date.PersianCalendar;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog;
 import com.fourmob.datetimepicker.date.PersianDatePickerDialog.OnDateSetListener;
@@ -22,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
@@ -44,10 +46,10 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 	private ImageButton editImageButton;
 
 	PersianCalendar calendar = new PersianCalendar();
-	Calendar cal = Calendar.getInstance();
+//	Calendar cal = Calendar.getInstance();
 
 	PersianDatePickerDialog persianDatePickerDialog = PersianDatePickerDialog.newInstance(this, calendar.get(PersianCalendar.YEAR), calendar.get(PersianCalendar.MONTH), calendar.get(PersianCalendar.DAY_OF_MONTH), true, PersianDatePickerDialog.PERSIAN);
-	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
+//	PersianDatePickerDialog datePickerDialog = PersianDatePickerDialog.newInstance(this, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), true, PersianDatePickerDialog.GREGORIAN);
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,11 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 		bmiNumberTextView = (TextView) findViewById(R.id.bmi_number);
 		bmiExplanationTextView = (TextView) findViewById(R.id.bmi_explanation);
 		editImageButton = (ImageButton) findViewById(R.id.calorie_target_edit_button);
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+			    this, R.layout.spinner_rtl_item, getResources().getStringArray(R.array.gender_list));
+
+		((Spinner) findViewById(R.id.gender_spinner)).setAdapter(adapter);
 		
 		loadUserDataFromDevice();
 		
@@ -89,10 +96,10 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 					
 					@Override
 					public void onClick(View v) {
-						datePickerDialog.setYearRange(1950, cal.get(Calendar.YEAR));
-						datePickerDialog.setVibrate(false);
-						datePickerDialog.setCloseOnSingleTapDay(false);
-						datePickerDialog.show(getSupportFragmentManager(), "date");						
+						persianDatePickerDialog.setYearRange(Constants.FIRST_YEAR_BIRTHDAY, calendar.get(Calendar.YEAR));
+						persianDatePickerDialog.setVibrate(false);
+						persianDatePickerDialog.setCloseOnSingleTapDay(false);
+						persianDatePickerDialog.show(getSupportFragmentManager(), "date");						
 					}
 				});
 		
@@ -114,8 +121,8 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 							if(User.getHeight() != 0)
 							{
 								float bmi = (float)User.getWeight()/(float)User.getHeight()/(float)User.getHeight()*10000;
-								bmiNumberTextView.setText(String.format("%.1f", bmi));
-								bmiExplanationTextView.setText(bmiExplanations[getBniStringInex(bmi)]);
+								bmiNumberTextView.setText(Utils.toPersianNumbers(String.format("%.1f", bmi)));
+								bmiExplanationTextView.setText(bmiExplanations[getBmiStringInex(bmi)]);
 							}
 						}
 					}
@@ -137,8 +144,8 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 						{
 							User.setWeight(Integer.parseInt(s.toString()));
 							float bmi = (float)User.getWeight()/(float)User.getHeight()/(float)User.getHeight()*10000;
-							bmiNumberTextView.setText(String.format("%.1f", bmi));
-							bmiExplanationTextView.setText(bmiExplanations[getBniStringInex(bmi)]);
+							bmiNumberTextView.setText(Utils.toPersianNumbers(String.format("%.1f", bmi)));
+							bmiExplanationTextView.setText(bmiExplanations[getBmiStringInex(bmi)]);
 						}
 					}
 				});
@@ -171,7 +178,7 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 	@Override
 	protected void onResume()
 	{
-		dailyTargetTextView.setText(User.getDailyTarget()+"");
+		dailyTargetTextView.setText(Utils.toPersianNumbers(""+User.getDailyTarget())+"");
 		super.onResume();
 	}
 	private boolean checkForIncompleteFields()
@@ -213,20 +220,21 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 		dailyTarget = userData.getInt(Constants.DAILY_TARGET, 0);
 		
 		genderSpinner.setSelection(gender);
-		dateOfBirthEditText.setText(dateString(day, month, year));
-		heightEditText.setText(height==0?"":height+"");
-		weightEditText.setText(weight==0?"":weight+"");
-		dailyTargetTextView.setText(dailyTarget==0?"":dailyTarget+"");
+		if(year != 0)
+			dateOfBirthEditText.setText(new Date(year, month, day).getString());
+		heightEditText.setText(Utils.toPersianNumbers(height==0?"":height+"")+"");
+		weightEditText.setText(Utils.toPersianNumbers(weight==0?"":weight+"")+"");
+		dailyTargetTextView.setText(Utils.toPersianNumbers(dailyTarget==0?"":dailyTarget+"")+"");
 		if(weight == 0 || height == 0)
 		{
-			bmiNumberTextView.setText("0.0");
+			bmiNumberTextView.setText(Utils.toPersianNumbers("0.0"));
 			bmiExplanationTextView.setText("");
 		}
 		else
 		{
 			float bmi = (float)weight/(float)height/(float)height*10000;
-			bmiNumberTextView.setText(String.format("%.1f", bmi));
-			bmiExplanationTextView.setText(bmiExplanations[getBniStringInex(bmi)]);
+			bmiNumberTextView.setText(Utils.toPersianNumbers(String.format("%.1f", bmi))+"");
+			bmiExplanationTextView.setText(bmiExplanations[getBmiStringInex(bmi)]);
 		}
 		
 		User.setDailyTarget(dailyTarget);
@@ -239,7 +247,7 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 		User.setYearOfBirth(year);
 	}
 
-	protected int getBniStringInex(float bmi) {
+	protected int getBmiStringInex(float bmi) {
 		if(bmi < 15)
 			return 0;
 		else if(bmi < 16)
@@ -275,8 +283,10 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 				return true;
 			saveUserDataOnDevice();
 			saveUserDataOnServer();
-			startActivity(new Intent(ProfileActivity.this, HistoryActivity.class));
 			finish();
+			Intent intent = new Intent(ProfileActivity.this, HistoryActivity.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+			startActivity(intent);
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -288,15 +298,15 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 		User.setMonthOfbirth(month+1);
 		User.setYearOfBirth(year);
 		
-		dateOfBirthEditText.setText(dateString(day, month, year));
+		dateOfBirthEditText.setText(new Date(year, month+1, day).getString());
 	}
 	
-	private String dateString(int day, int month, int year)
-	{
-		if(day == 0 && month == 0 && year == 0)
-			return "";
-		return String.format("%02d", day)+"/"+String.format("%02d", month+1)+"/"+String.format("%4d", year);
-	}
+//	private String dateString(int day, int month, int year)
+//	{
+//		if(day == 0 && month == 0 && year == 0)
+//			return "";
+//		return String.format("%02d", day)+"/"+String.format("%02d", month+1)+"/"+String.format("%4d", year);
+//	}
 
 	private void saveUserDataOnDevice()
 	{
@@ -319,9 +329,8 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 		
 		ContentValues values = new ContentValues();
 		values.put(DailyConsumptionEntry.COLUMN_NAME_TARGET, User.getDailyTarget());
-
 		
-		String today = new Date(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH)+1, cal.get(Calendar.DATE)).getSTDString();
+		String today = new Date(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH)+1, calendar.get(Calendar.DATE)).getSTDString();
 		String selection = DailyConsumptionEntry.COLUMN_NAME_DATE + " = ?";
 		String[] selectionArgs = { today };
 
@@ -341,6 +350,7 @@ public class ProfileActivity extends FragmentActivity implements OnDateSetListen
 			
 			db.insert(DailyConsumptionEntry.TABLE_NAME, null, values);
 		}
+		db.close();
 	}
 	
 	private void saveUserDataOnServer()

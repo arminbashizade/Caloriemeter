@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="action_bar_color">#4CB050</color>
-    <color name="light_theme_color">#C5EAC5</color>
-    <color name="list_divider_color">#68CC68</color>
-    <color name="action_bar_darker_color">#3F9142</color>
+    <color name="action_bar_color">#43A047</color>
+    <color name="action_bar_darker_color">#388E3C</color>
+    <color name="light_theme_color">#C8E6C9</color>
+    <color name="list_divider_color">#81C784</color>
     <color name="action_bar_title_color">#FFFFFF</color>
+    <color name="hint_color">#B2EAEAEA</color>
     <color name="selected_tab">#FFFFFF</color>
 	<color name="unselected_tab">#80404040</color>
 	<color name="navigation_drawer_item_color">#FFFFFF</color>

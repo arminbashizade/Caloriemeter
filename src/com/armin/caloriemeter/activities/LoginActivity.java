@@ -1,8 +1,8 @@
 package com.armin.caloriemeter.activities;
 
-import com.armin.caloriemeter.Constants;
 import com.armin.caloriemeter.R;
-import com.armin.caloriemeter.User;
+import com.armin.caloriemeter.util.Constants;
+import com.armin.caloriemeter.util.User;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
